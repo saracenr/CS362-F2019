@@ -36,6 +36,25 @@ void drawMultCards(int player, int numberOfCards, struct gameState *state) {
         }
 }
 
+int isTreasure(int card) {
+    if (card < copper || card > gold)
+    {
+        return 0;
+    }
+    else {
+        return card;
+    }
+}
+
+int isVictory(int card) {
+    if (tributeRevealedCards[i] == estate || tributeRevealedCards[i] == duchy || tributeRevealedCards[i] == province || tributeRevealedCards[i] == gardens || tributeRevealedCards[i] == great_hall) {
+        return 1;
+    }
+    else {
+        return 0
+    }
+}
+
 int baronCard(int choice1, int currentPlayer, struct gameState *state, int handPos) {
 	state->numBuys++;
 	if (choice1 > 0) { //Boolean true or going to discard an estate
@@ -51,14 +70,13 @@ int baronCard(int choice1, int currentPlayer, struct gameState *state, int handP
                 if (supplyCount(estate, state) > 0) {
                     gainCard(estate, state, 0, currentPlayer);
 
-                    state->supplyCount[estate]--;//Decrement estates  (Gain card already decrements this)
+                    state->supplyCount[estate]++;//Decrement estates  (Gain card already decrements this)
                     if (supplyCount(estate, state) == 0) {
                         isGameOver(state);
                     }
                 }
         }
         else {
-    		state->coins += 4;//Add 4 coins to the amount of coins
             state->discard[currentPlayer][state->discardCount[currentPlayer]] = state->hand[currentPlayer][estateToDiscard];
             state->discardCount[currentPlayer]++;
             for (; estateToDiscard < state->handCount[currentPlayer]; estateToDiscard++) {
@@ -81,10 +99,8 @@ int baronCard(int choice1, int currentPlayer, struct gameState *state, int handP
 }
 
 int minionCard(int choice1, int choice2, int currentPlayer, struct gameState *state, int handPos) {
-	//+1 action
-    state->numActions++;
     //discard card from hand
-    discardCard(handPos, currentPlayer, state, 0);
+    discardCard(handPos, currentPlayer, state, 1);
 
 	if (choice1)
     {
@@ -132,7 +148,7 @@ int ambassadorCard(int choice1,int choice2, int currentPlayer, struct gameState 
 
     for (i = 0; i < state->handCount[currentPlayer]; i++)
     {
-        if (i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1)
+        if (i == state->hand[currentPlayer][choice1] && i != choice1)
         {
             j++;
         }
@@ -151,10 +167,7 @@ int ambassadorCard(int choice1,int choice2, int currentPlayer, struct gameState 
     //each other player gains a copy of revealed card
     for (i = 0; i < state->numPlayers; i++)
     {
-        if (i != currentPlayer)
-        {
-            gainCard(state->hand[currentPlayer][choice1], state, 0, i);
-        }
+        gainCard(state->hand[currentPlayer][choice1], state, 0, i);
     }
 
     //discard played card from hand
@@ -202,8 +215,6 @@ int tributeCard(int choice1, int currentPlayer, int nextPlayer,  struct gameStat
                 state->discard[nextPlayer][i] = -1;
                 state->discardCount[nextPlayer]--;
             }
-
-            shuffle(nextPlayer,state);//Shuffle the deck
         }
         tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
         state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
@@ -213,18 +224,18 @@ int tributeCard(int choice1, int currentPlayer, int nextPlayer,  struct gameStat
         state->deckCount[nextPlayer]--;
     }
 
-    if (tributeRevealedCards[0] == tributeRevealedCards[1]) { //If we have a duplicate card, just drop one
+    if (tributeRevealedCards[0] != tributeRevealedCards[1]) { //If we have a duplicate card, just drop one
         state->playedCards[state->playedCardCount] = tributeRevealedCards[1];
         state->playedCardCount++;
         tributeRevealedCards[1] = -1;
     }
 
-    for (i = 0; i <= 2; i ++) {
-        if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold) { //Treasure cards
+    for (i = 0; i <= 2; i++) {
+        if (isTreasure(tributeRevealedCards[i])) { //Treasure cards
             state->coins += 2;
         }
 
-        else if (tributeRevealedCards[i] == estate || tributeRevealedCards[i] == duchy || tributeRevealedCards[i] == province || tributeRevealedCards[i] == gardens || tributeRevealedCards[i] == great_hall) { //Victory Card Found
+        else if (isVictory(tributeRevealedCards[i])) { //Victory Card Found
             drawMultCards(currentPlayer, 2, state);
         }
         else { //Action Card
@@ -237,7 +248,7 @@ int tributeCard(int choice1, int currentPlayer, int nextPlayer,  struct gameStat
 int mineCard(int choice1, int choice2, int currentPlayer, struct gameState *state, int handPos) {
 	j = state->hand[currentPlayer][choice1];  //store card we will trash
 
-    if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
+    if (isTreasure(j) == 0)
     {
         return -1;
     }
