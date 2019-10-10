@@ -51,7 +51,7 @@ int isVictory(int card) {
         return 1;
     }
     else {
-        return 0
+        return 0;
     }
 }
 
@@ -95,7 +95,7 @@ int baronCard(int choice1, int currentPlayer, struct gameState *state, int handP
             }
         }
     }
-    return 0
+    return 0;
 }
 
 int minionCard(int choice1, int choice2, int currentPlayer, struct gameState *state, int handPos) {
@@ -247,7 +247,7 @@ int tributeCard(int choice1, int currentPlayer, int nextPlayer,  struct gameStat
 }
 
 int mineCard(int choice1, int choice2, int currentPlayer, struct gameState *state, int handPos) {
-	j = state->hand[currentPlayer][choice1];  //store card we will trash
+	int j = state->hand[currentPlayer][choice1];  //store card we will trash
 
     if (isTreasure(j) == 0)
     {
