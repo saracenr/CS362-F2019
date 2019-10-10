@@ -704,16 +704,16 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     if (card == baron) {
         return baronCard(choice1, state, handPos);
     }
-    elif (card == minion) {
+    else if (card == minion) {
         return minionCard(choice1, choice2, state, handPos);
     }
-    elif (card == ambassador) {
+    else if (card == ambassador) {
         return ambassadorCard(choice1, choice2, state, handPos);
     }
-    elif (card == tribute) {
+    else if (card == tribute) {
         return tributeCard(choice1, choice2, state, handPos);
     }
-    elif (card == mine) {
+    else if (card == mine) {
         return mineCard(choice1, choice2, state, handPos);
     }
     //uses switch to select card and perform actions
