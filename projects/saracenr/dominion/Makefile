@@ -9,7 +9,7 @@ dominion.o: dominion.h dominion.c rngs.o
 cardFunctions.o: cardFunctions.h cardFunctions.c
 	gcc -c cardFunctions.c -g $(CFLAGS)
 
-playdom: dominion.o cardFunctions.o playdom.c 
+playdom: dominion.o playdom.c cardFunctions.o
 	gcc -o playdom playdom.c -g dominion.o rngs.o cardFunctions.o $(CFLAGS)
 #To run playdom you need to entere: ./playdom <any integer number> like ./playdom 10*/
 

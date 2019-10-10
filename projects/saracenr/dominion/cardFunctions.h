@@ -1,6 +1,8 @@
 #ifndef _CARDFUNCTIONS_H
 #define _CARDFUNCTIONS_H
 
+#include "dominion.h"
+
 int cardFinder(int cardToFind, int player, struct gameState *state, int currentCardHandPos);
 void discardHand(int player, struct gameState *state);
 void drawMultCards(int player, int numberOfCards, struct gameState *state);

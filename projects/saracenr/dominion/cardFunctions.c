@@ -85,6 +85,7 @@ int baronCard(int choice1, int currentPlayer, struct gameState *state, int handP
             state->hand[currentPlayer][state->handCount[currentPlayer]] = -1;
             state->handCount[currentPlayer]--;
         }
+    }
     else {// They chose not to discard an estate and must gain an estate
     	if (supplyCount(estate, state) > 0) {
             gainCard(estate, state, 0, currentPlayer);//Gain an estate
@@ -96,7 +97,6 @@ int baronCard(int choice1, int currentPlayer, struct gameState *state, int handP
         }
     }
     return 0;
-    }
 }
 
 int minionCard(int choice1, int choice2, int currentPlayer, struct gameState *state, int handPos) {
