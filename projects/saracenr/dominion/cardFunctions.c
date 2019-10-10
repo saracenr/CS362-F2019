@@ -96,6 +96,7 @@ int baronCard(int choice1, int currentPlayer, struct gameState *state, int handP
         }
     }
     return 0;
+    }
 }
 
 int minionCard(int choice1, int choice2, int currentPlayer, struct gameState *state, int handPos) {
