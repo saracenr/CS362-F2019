@@ -16,6 +16,9 @@ playdom: dominion.o playdom.c cardFunctions.o
 testDrawCard: testDrawCard.c dominion.o rngs.o cardFunctions.o
 	gcc  -o testDrawCard -g  testDrawCard.c dominion.o rngs.o cardFunctions.o $(CFLAGS)
 
+testUnitTest1: unittest1.c dominion.o rngs.o cardFunctions.o
+	gcc -o testUnitTest1 -g  unittest1.c dominion.o rngs.o $(CFLAGS)
+	
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
