@@ -127,7 +127,7 @@ int main() {
 	    }
 	}
 
-    printf("All tests passed!\n");
+    printf("Tests Completed!\n");
 
     return 0;
 }
