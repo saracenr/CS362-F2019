@@ -59,6 +59,7 @@ int main() {
 	                	if (p != eachPlayer) {
 	                		for (int otherCards = 0; otherCards <= handCount; otherCards++) {
 	                		G.hand[eachPlayer][otherCards] = k[otherCards];
+	                		}
 	                	}
 	                }
 
