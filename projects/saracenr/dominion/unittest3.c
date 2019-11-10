@@ -38,7 +38,7 @@ int main() {
         {
         	for (handCount = 1; handCount <= maxHandCount; handCount++)
             {
-            for (int choice = 0; choice <= 2; choice++)
+            for (int choice = -1; choice <= 3; choice++)
             	{
 #if (NOISY_TEST == 1)
     printf("Test player %d with %d card(s). Ambassador at pos %d.\n", p, handCount, ambassadorLocation);
@@ -67,7 +67,12 @@ int main() {
 	#if (NOISY_TEST == 1)
 	                printf("Handsize is %d, Ambassador is at pos %d. They chose to reveal %d card copies.\n", handCount, ambassadorLocation, choice);
 	#endif
+
 	                //  Assertions
+	                if (choice > 2 || choice < 0  && successful != -1) {  //  Assert the function returns -1 if the choice is invalid
+	                	printf("Choice was invalid but the card function was successful!\n");
+	                }
+	                
 	                if (choice == 0 && G.handCount[p] != handCount-1 && successful != -1) {  // Assert that the ambassador card was discarded and no cards gained
 	                	printf("Hand for current player is not correct for successful returning 0 cards!\n");
 	                }
