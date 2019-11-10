@@ -13,8 +13,8 @@ char inputChar()
 char *inputString()
 {
     // TODO: rewrite this function
-  int stringSize = 10;
-  char str[stringSize];
+  int stringSize = (rand() % 10) + 1;
+  char* str = malloc(sizeof(char) * stringSize);
 
   for (int x = 0; x < stringSize; x++) {
     str[x] = inputChar();
@@ -60,6 +60,7 @@ void testme()
       printf("error ");
       exit(200);
     }
+    free s;
   }
 }
 
