@@ -16,7 +16,7 @@ int main() {
     int maxBonus = 10;
     int p, r, handCount;
     int minionLocation;
-    int k[10] = {adventurer, council_room, feast, gardens, mine
+    int k[10] = {adventurer, council_room, feast, gardens, minion
                , remodel, smithy, village, baron, great_hall};
     struct gameState G;
     int maxHandCount = 5;
@@ -68,7 +68,7 @@ int main() {
 	                }
 
 	#if (NOISY_TEST == 1)
-	                printf("Handsize is %d, Minion is at pos %d. They chose choice %d\n.", handCount, minionLocation, choice+1);
+	                printf("Handsize is %d, Minion is at pos %d. They chose choice %d.\n", handCount, minionLocation, choice+1);
 	#endif
 	                //  Assertions
 	                if (G.numActions != 1) {  // Assert that actions were incremented no matter what
@@ -96,6 +96,10 @@ int main() {
 	                	printf("Hand count is not correct for opponent after choosing choice 1!\n");
 	                }
 	                else if (choice == 1 && p == 0 && G.handCount[p+1] != 4) {  // Assert that opponent is forced to discard
+	                	printf("Hand count is not correct for opponent after choosing choice 2!\n");
+	                }
+
+	                if (G.discard[p][G.discardCount] != minion) {  //  Asserts that the minion card was discarded and not trashed.
 	                	printf("Hand count is not correct for opponent after choosing choice 2!\n");
 	                }
 	            }

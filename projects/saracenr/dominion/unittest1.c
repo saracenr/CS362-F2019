@@ -60,7 +60,7 @@ int main() {
 	                printf("Handsize is %d, Baron is at pos %d. No Estate in hand.\n", handCount, baronLocation);
 	#endif
 	                //  Assertions
-	                if (G.numBuys =! previousNumBuys + 1) {  // Assert that buys were incremented
+	                if (G.numBuys != previousNumBuys + 1) {  // Assert that buys were incremented
 	                	printf("Buys are not correct!\n");
 	                }
 
@@ -84,13 +84,14 @@ int main() {
 	                	for (estateLocation = 0; estateLocation <= handCount; estateLocation++) {
 	                		if (estateLocation != baronLocation) {
 #if (NOISY_TEST == 1)
-	printf("Handsize is %d, baron is at pos %d. Estate in hand at pos %d \n", handCount, baronLocation, estateLocation);
+	printf("Handsize is %d, baron is at pos %d. Estate in hand at pos %d. \n", handCount, baronLocation, estateLocation);
 #endif
 				                memset(&G, 23, sizeof(struct gameState));   // clear the game state
 				                r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
 				                G.handCount[p] = handCount; // set the number of cards on hand
 				                G.hand[p][baronLocation] = baron;
 				                G.hand[p][estateLocation] = estate;
+				                int currentCoins = G.coins;
 				                int previousNumBuys = G.numBuys;
 				                int estateCount = G.supplyCount[estate];
 				                for (int otherCards = 0; otherCards <= handCount; otherCards++) {
@@ -101,7 +102,11 @@ int main() {
 				                baronCard(choiceOne, p, &G, baronLocation);
 
 							                //  Assertions
-				                if (G.numBuys =! previousNumBuys + 1) {  // Assert that buys were incremented
+								if (G.coins != currentCoins + 4) {  // Assert that buys were incremented
+				                	printf("Coins are not correct!\n");
+				                }
+
+				                if (G.numBuys != previousNumBuys + 1) {  // Assert that buys were incremented
 				                	printf("Buys are not correct!\n");
 				                }
 
