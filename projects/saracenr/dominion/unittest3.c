@@ -40,7 +40,7 @@ int main() {
             {
             for (int choice = -1; choice <= 3; choice++)
             	{
-            		for (int revealedCard = 1; revealedCard <= handCount) {
+            		for (int revealedCard = 1; revealedCard <= handCount; revealedCard++) {
 	#if (NOISY_TEST == 1)
 	    printf("Test player %d with %d card(s). Ambassador at pos %d.\n", p, handCount, ambassadorLocation);
 	#endif
