@@ -70,7 +70,7 @@ int main() {
 	#endif
 
 		                //  Assertions
-		                if (choice > 2 || choice < 0  && successful != -1) {  //  Assert the function returns -1 if the choice is invalid
+		                if ((choice > 2 || choice < 0)  && successful != -1) {  //  Assert the function returns -1 if the choice is invalid
 		                	printf("Choice was invalid but the card function was successful!\n");
 		                }
 
