@@ -13,7 +13,7 @@ char inputChar()
 char *inputString()
 {
     // TODO: rewrite this function
-  int stringSize = (rand() % 11) + 1;
+  int stringSize = 10
   char str[stringSize];
 
   for (int x = 0; x < stringSize; x++) {
