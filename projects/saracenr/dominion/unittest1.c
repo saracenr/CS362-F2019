@@ -42,7 +42,7 @@ int main() {
             for (int choiceOne = 0; choiceOne <= 1; choiceOne++)
             	{
 #if (NOISY_TEST == 1)
-    printf("Test player %d with %d cards baron at pos %d.\n", p, handCount, baronLocation);
+    printf("Test player %d with %d card(s). Baron at pos %d.\n", p, handCount, baronLocation);
 #endif
 	                memset(&G, 23, sizeof(struct gameState));   // clear the game state
 	                r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
@@ -57,7 +57,7 @@ int main() {
 	                }
 	                baronCard(choiceOne, p, &G, baronLocation);
 	#if (NOISY_TEST == 1)
-	                printf("Handsize is %d, baron is at pos %d. No Estate in hand, trying %d. \n", handCount, baronLocation, choiceOne);
+	                printf("Handsize is %d, Baron is at pos %d. No Estate in hand.\n", handCount, baronLocation);
 	#endif
 	                //  Assertions
 	                if (G.numBuys =! previousNumBuys + 1) {  // Assert that buys were incremented
