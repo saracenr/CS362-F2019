@@ -46,7 +46,7 @@ int main() {
 	                memset(&G, 23, sizeof(struct gameState));   // clear the game state
 	                r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
 	                for (int eachPlayer = 0; eachPlayer < 4; eachPlayer++) {  // Sets number of cards for each player
-	                	G.handCount[eachPlayer] = handCount
+	                	G.handCount[eachPlayer] = handCount;
 	                }
 	                G.hand[p][ambassadorLocation] = ambassador;
 	                for (int otherCards = 0; otherCards <= handCount; otherCards++) {
