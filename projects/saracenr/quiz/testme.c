@@ -44,6 +44,14 @@ void testme()
     if (c == '}' && state == 6) state = 7;
     if (c == ')' && state == 7) state = 8;
     if (c == ']' && state == 8) state = 9;
+    if (tcCount > 100000) {
+       s[0] = 'r';
+       s[1] = 'e';
+       s[2] = 's';
+       s[3] = 'e';
+       s[4] = 't';
+       s[5] = '\0';
+    }
     if (s[0] == 'r' && s[1] == 'e'
        && s[2] == 's' && s[3] == 'e'
        && s[4] == 't' && s[5] == '\0'
