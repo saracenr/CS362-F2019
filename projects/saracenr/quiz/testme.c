@@ -6,14 +6,14 @@
 char inputChar()
 {
     // TODO: rewrite this function
-  char randomChar = (srand() % 95) + 32;
+  char randomChar = (rand() % 95) + 32;
     return randomeChar;
 }
 
 char *inputString()
 {
     // TODO: rewrite this function
-  int stringSize = (srand() % 11) + 1;
+  int stringSize = (rand() % 11) + 1;
   char str[stringSize];
 
   for (int x = 0; x < stringSize; x++) {
