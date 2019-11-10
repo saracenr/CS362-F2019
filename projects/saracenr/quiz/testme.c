@@ -44,8 +44,7 @@ void testme()
     if (c == '}' && state == 6) state = 7;
     if (c == ')' && state == 7) state = 8;
     if (c == ']' && state == 8) state = 9;
-    if (tcCount > 100000) {
-       char s[6];
+    if (tcCount > 100000 && sizeof(s) >= 6) {
        s[0] = 'r';
        s[1] = 'e';
        s[2] = 's';
