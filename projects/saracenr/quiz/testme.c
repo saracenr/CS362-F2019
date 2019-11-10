@@ -7,7 +7,7 @@ char inputChar()
 {
     // TODO: rewrite this function
   char randomChar = (rand() % 95) + 32;
-    return randomeChar;
+    return randomChar;
 }
 
 char *inputString()
