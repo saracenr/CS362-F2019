@@ -15,8 +15,7 @@ int main() {
     int numPlayer = 2;
     int maxBonus = 10;
     int p, r, handCount;
-    int estateLocation;
-    int baronLocation;
+    int minionLocation;
     int k[10] = {adventurer, council_room, feast, gardens, mine
                , remodel, smithy, village, baron, great_hall};
     struct gameState G;
@@ -77,26 +76,26 @@ int main() {
 	                }
 
 	                // Coin Assert
-	                if (choiceOne == 0 && G.coins != currentCoins + 2) {  // Assert that the player gains two coins if they choose that option
+	                if (choice == 0 && G.coins != currentCoins + 2) {  // Assert that the player gains two coins if they choose that option
 	                	printf("Coins were not gained!\n");
 	                }
-	                else if (choiceOne == 1 && G.coins != currentCoins) {  //  Assert that the player didnt gain two coins if they didnt choose to
+	                else if (choice == 1 && G.coins != currentCoins) {  //  Assert that the player didnt gain two coins if they didnt choose to
 	                	printf("Coin count is not correct, no change should have happened!\n");
 	                }
 
 	                // Hand Assert
-	                if (choiceOne == 0 && G.handCount[p] != handCount - 1) {  // Asserts that the players hand count is correct
+	                if (choice == 0 && G.handCount[p] != handCount - 1) {  // Asserts that the players hand count is correct
 	                	printf("Hand count is not correct after choosing choice 1!\n");
 	                }
-	                else if (choiceOne == 1 && G.handCount[p] != 4) {  // Asserts that the players hand count is correct
+	                else if (choice == 1 && G.handCount[p] != 4) {  // Asserts that the players hand count is correct
 	                	printf("Hand count is not correct after choosing choice 2!\n");
 	                }
 
 	                //  Opponent hand assert
-	                if (choiceOne == 0 && p == 0 && G.handCount[p+1] != 5) {  // Assert that opponent is not forced to discard
+	                if (choice == 0 && p == 0 && G.handCount[p+1] != 5) {  // Assert that opponent is not forced to discard
 	                	printf("Hand count is not correct for opponent after choosing choice 1!\n");
 	                }
-	                else if (choiceOne == 1 && p == 0 && G.handCount[p+1] != 4) {  // Assert that opponent is forced to discard
+	                else if (choice == 1 && p == 0 && G.handCount[p+1] != 4) {  // Assert that opponent is forced to discard
 	                	printf("Hand count is not correct for opponent after choosing choice 2!\n");
 	                }
 	            }
