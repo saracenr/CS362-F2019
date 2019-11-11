@@ -15,7 +15,7 @@ int main() {
     int numPlayer = 4;
     int maxBonus = 10;
     int p, r, handCount;
-    int minionLocation;
+    int tributeLocation;
     int k[10] = {adventurer, gardens, mine, council_room, tribute
                , remodel, smithy, village, baron, great_hall};
     int makeDeck[9] = {gardens, gardens, copper, copper, baron
