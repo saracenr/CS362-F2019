@@ -92,13 +92,13 @@ int main() {
 					                		G.hand[p][otherCards] = k[otherCards];
 					                	}
 					                }
-					                mineCard(treasureLocation, treasure[treasureChoice], p, &G, mineLocation);
+					                mineCard(treasureLocation, treasures[treasureChoice], p, &G, mineLocation);
 
 									//  Assertions
-					                if (G.hand[p][treasureLocation] + 3 >= treasure[treasureChoice] && cardFinder(treasures[choiceOne], p, &G, mineLocation) !=  >= 0) {  // Assert that does gain a copy of the chosen card
+					                if (G.hand[p][treasureLocation] + 3 >= treasures[treasureChoice] && cardFinder(treasures[choiceOne], p, &G, mineLocation) >= 0) {  // Assert that does gain a copy of the chosen card
 					                	printf("Desired treasure was not added to hand when it should have been!\n");
 					                }
-					                else if (G.hand[p][treasureLocation] + 3 < treasure[treasureChoice] && cardFinder(treasures[choiceOne], p, &G, mineLocation) != -1) {  // Assert that does not gain a copy of the chosen card
+					                else if (G.hand[p][treasureLocation] + 3 < treasures[treasureChoice] && cardFinder(treasures[choiceOne], p, &G, mineLocation) != -1) {  // Assert that does not gain a copy of the chosen card
 					                	printf("Desired treasure was added to hand when it should not have been!\n");
 					                }
 
