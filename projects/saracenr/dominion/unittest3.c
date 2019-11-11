@@ -31,7 +31,7 @@ int main() {
         golds[i] = gold;
     }
 
-    printf ("TESTING minionCard():\n");
+    printf ("TESTING ambassadorCard():\n");
     for (p = 0; p < numPlayer; p++)
     {
         for (ambassadorLocation = 0; ambassadorLocation <= maxHandCount; ambassadorLocation++)
