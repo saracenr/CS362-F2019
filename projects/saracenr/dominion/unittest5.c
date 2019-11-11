@@ -17,7 +17,7 @@ int main() {
     int p, r, handCount;
     int treasureLocation;
     int mineLocation;
-    int treasures[3] = {copper,silver,gold}
+    int treasures[3] = {copper,silver,gold};
     int k[10] = {adventurer, council_room, feast, gardens, mine
                , remodel, smithy, village, baron, great_hall};
     struct gameState G;
@@ -56,7 +56,7 @@ int main() {
 	                		G.hand[p][otherCards] = k[otherCards];
 	                	}
 	                }
-	                baronCard(choiceOne,treasures[choiceOne], p, &G, mineLocation);
+	                mineCard(choiceOne,treasures[choiceOne], p, &G, mineLocation);
 	#if (NOISY_TEST == 1)
 	                printf("Handsize is %d, Mine is at pos %d. No treasure in hand.\n", handCount, mineLocation);
 	#endif
@@ -92,7 +92,7 @@ int main() {
 					                		G.hand[p][otherCards] = k[otherCards];
 					                	}
 					                }
-					                baronCard(treasureLocation, treasure[treasureChoice], p, &G, mineLocation);
+					                mineCard(treasureLocation, treasure[treasureChoice], p, &G, mineLocation);
 
 									//  Assertions
 					                if (G.hand[p][treasureLocation] + 3 >= treasure[treasureChoice] && cardFinder(treasures[choiceOne], p, &G, mineLocation) !=  >= 0) {  // Assert that does gain a copy of the chosen card
