@@ -99,7 +99,7 @@ int main() {
 	                	printf("Hand count is not correct for opponent after choosing choice 2!\n");
 	                }
 
-	                if (G.discard[p][G.discardCount] != minion) {  //  Asserts that the minion card was discarded and not trashed.
+	                if (G.discard[p][G.discardCount[p]] != minion) {  //  Asserts that the minion card was discarded and not trashed.
 	                	printf("Hand count is not correct for opponent after choosing choice 2!\n");
 	                }
 	            }
