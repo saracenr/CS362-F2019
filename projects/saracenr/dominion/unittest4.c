@@ -99,6 +99,20 @@ int main() {
                 		}
                 	}
 
+                	if (G.discard[nextPlayer][G.discardCount[nextPlayer]] != G.discard[nextPlayer][G.discardCount[nextPlayer]-1]) {  // Assert that if both cards are not the same type that are revealed then the correct action is taken
+                		if (G.discard[nextPlayer][G.discardCount[nextPlayer]] == gardens && G.handCount[p] != handCount + 1) {
+                			printf("Handsize is incorrect for reveal of one victory cards!\n");
+                		}
+
+                		if (G.discard[nextPlayer][G.discardCount[nextPlayer]] == copper && G.coins != currentCoins + 2) {
+                			printf("Coins is incorrect for reveal of one treasure cards!\n");
+                		}
+
+                		if (G.discard[nextPlayer][G.discardCount[nextPlayer]] == baron && currentActions != 2) {
+                			printf("Actions is incorrect for reveal of one treasure cards!\n");
+                		}
+                	}
+
                 	if (G.discardCount[nextPlayer] != discardStart + 2) {  //  Assert that if the deck had to be shuffled to complete the effect that it was actually shuffled.
                 		int isSame = G.deckCount[nextPlayer];
                 		for (int x = 0; x < G.deckCount[nextPlayer]; x++) {
