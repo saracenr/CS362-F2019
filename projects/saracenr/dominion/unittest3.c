@@ -58,9 +58,7 @@ int main() {
 			                }
 
 			                for (int copies = 0; copies < amountOfRevealed; copies++) {
-			                	if (revealedCard+copies != ambassadorLocation) {
-			                		G.hand[p][revealedCard+1] = G.hand[p][revealedCard];
-			                	}
+			                	gainCard(G.hand[p][revealedCard], &G, 2, p);
 			                }
 
 			                for (int eachPlayer = 0; eachPlayer < 4; eachPlayer++) {  // Sets number of cards for each player
