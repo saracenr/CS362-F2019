@@ -47,5 +47,15 @@ all: playdom player
 
 unittests: unittest1 unittest2 unittest3 unittest4 unittest5
 
+unittestresults: unittests
+	./unittest1 &> unittestresult.out
+	./unittest2 &> unittestresult.out
+	./unittest3 &> unittestresult.out
+	./unittest4 &> unittestresult.out
+	./unittest5 &> unittestresult.out
+	gcov cardFunctions.c -b -f >> unittestresult.out
+	cat cardFunctions.c.gcov >> unittestresult.out
+
+
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe unittest1 unittest2 unittest3 unittest4 unittest5 
