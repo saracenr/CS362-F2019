@@ -57,6 +57,8 @@ int main() {
         choiceOne = (int)floor(Random() * 2);
         baronCard(choiceOne, currentPlayer, &G, baronLocation);
 
+        printf("Current player is %d.  Baron is at location %d.  ChoiceOne is %d.\n", currentPlayer, baronLocation, choiceOne);
+
         //  Assertions
         if (G.numBuys != previousNumBuys + 1) {  // Assert that buys were incremented
         	printf("Buys are not correct!\n");
