@@ -15,7 +15,7 @@ int main() {
     int numPlayer;
     int currentPlayer;
     int maxBonus = 10;
-    int p, r, handCount, runTime, choiceOne;
+    int r, handCount, runTime, choiceOne;
     int estateLocation;
     int baronLocation;
     int currentCoins;
@@ -49,24 +49,24 @@ int main() {
     	currentCoins = G.coins;
         int previousNumBuys = G.numBuys;
         int estateCount = G.supplyCount[estate];
-        for (int otherCards = 0; otherCards <= handCount; otherCards++) {
+        for (int otherCards = 0; otherCards <= G.handCount[currentPlayer]; otherCards++) {
         	if (otherCards != baronLocation) {
         		G.hand[currentPlayer][otherCards] = possibleCards[(int)floor(Random() * 15)];
         	}
         }
         choiceOne = floor(Random() * 2);
-        baronCard(choiceOne, p, &G, baronLocation);
+        baronCard(choiceOne, currentPlayer, &G, baronLocation);
 
         //  Assertions
         if (G.numBuys != previousNumBuys + 1) {  // Assert that buys were incremented
         	printf("Buys are not correct!\n");
         }
 
-        if (choiceOne == 0 && cardFinder(estate, p, &G, baronLocation) >= 0 && G.coins != currentCoins + 4) {  // Assert that coins added
+        if (choiceOne == 0 && cardFinder(estate, currentPlayer, &G, baronLocation) >= 0 && G.coins != currentCoins + 4) {  // Assert that coins added
         	printf("Coins are not correct!\n");
         }
 
-        if (choiceOne == 0 && cardFinder(estate, p, &G, baronLocation) >= 0) {  // Assert that the players hand gains an estate card
+        if (choiceOne == 0 && cardFinder(estate, currentPlayer, &G, baronLocation) >= 0) {  // Assert that the players hand gains an estate card
         	printf("Estate was not added to hand!\n");
         }
 
@@ -74,7 +74,7 @@ int main() {
         	printf("Estate supply Pile is not correct!\n");
         }
 
-        if (choiceOne == 1 && cardFinder(estate, p, &G, baronLocation) != -1) {  // Assert that if trying to discard an estate it removes the estate from hand
+        if (choiceOne == 1 && cardFinder(estate, currentPlayer, &G, baronLocation) != -1) {  // Assert that if trying to discard an estate it removes the estate from hand
         	printf("Estate card not discarded from hand!\n");
         }
         if (choiceOne == 1 && G.supplyCount[estate] != estateCount) {  // Assert that if trying to discard an estate it removes the estate from hand
