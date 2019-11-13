@@ -37,7 +37,7 @@ int main() {
 
     for (runTime = 0; runTime < 100000; runTime++) {
 
-		PlantSeeds();
+		PlantSeeds(-1);
     	numPlayer = (int)floor(Random() * 3) + 2;
     	currentPlayer = (int)floor(Random() * numPlayer);
 
