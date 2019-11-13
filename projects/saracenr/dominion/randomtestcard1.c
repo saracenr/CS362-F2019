@@ -11,6 +11,7 @@
 int main() {
     int i;
     int seed = 1000;
+    PlantSeeds(seed);
     int numPlayer;
     int currentPlayer;
     int maxBonus = 10;
@@ -37,7 +38,7 @@ int main() {
 
     for (runTime = 0; runTime < 100000; runTime++) {
 
-		PlantSeeds(-1);
+
     	numPlayer = (int)floor(Random() * 3) + 2;
     	currentPlayer = (int)floor(Random() * numPlayer);
 
