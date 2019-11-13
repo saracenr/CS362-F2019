@@ -51,7 +51,7 @@ int main() {
         int estateCount = G.supplyCount[estate];
         for (int otherCards = 0; otherCards <= handCount; otherCards++) {
         	if (otherCards != baronLocation) {
-        		G.hand[currentPlayer][otherCards] = possibleCards[floor(Random() * 15)];
+        		G.hand[currentPlayer][otherCards] = possibleCards[(int)floor(Random() * 15)];
         	}
         }
         choiceOne = floor(Random() * 2);
