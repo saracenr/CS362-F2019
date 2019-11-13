@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
+#include <math.h>
+#include <stdlib.h>
 
 int main() {
     int i;
@@ -16,6 +18,7 @@ int main() {
     int p, r, handCount, runTime, choiceOne;
     int estateLocation;
     int baronLocation;
+    int currentCoins;
     int k[10] = {adventurer, council_room, feast, gardens, mine
                , remodel, smithy, village, baron, great_hall};
     int possibleCards[16] = {adventurer, council_room, feast, gardens, mine
@@ -43,11 +46,12 @@ int main() {
         G.handCount[currentPlayer] = floor(Random() * 7);
     	baronLocation = floor(Random() * G.handCount[currentPlayer]);
     	G.hand[p][baronLocation] = baron;
+    	currentCoins = G.coins;
         int previousNumBuys = G.numBuys;
         int estateCount = G.supplyCount[estate];
         for (int otherCards = 0; otherCards <= handCount; otherCards++) {
         	if (otherCards != baronLocation) {
-        		G.hand[currentPlayer][otherCards] = possibleCards[floor(Random() * 16)];
+        		G.hand[currentPlayer][otherCards] = possibleCards[floor(Random() * 15)];
         	}
         }
         choiceOne = floor(Random() * 2);
