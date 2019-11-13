@@ -28,6 +28,9 @@ runtests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o cardFunctions.o $(CFLAGS)
 
+randomtest1: randomtestcard1.c dominion.o rngs.o cardFunctions.o
+	gcc  -o randomtest1 -g  randomtestcard1.c dominion.o rngs.o cardFunctions.o $(CFLAGS)
+
 all: playdom player 
 
 clean:
