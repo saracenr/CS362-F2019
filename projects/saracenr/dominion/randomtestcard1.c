@@ -11,7 +11,7 @@
 int main() {
     int i;
     int seed = 1;
-    PutSeed(seed);
+    PutSeed(-1);
     int numPlayer;
     int currentPlayer;
     int maxBonus = 10;
