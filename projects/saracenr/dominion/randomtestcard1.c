@@ -38,13 +38,13 @@ int main() {
 
     for (runTime = 0; runTime < 1000000; runTime++) {
 
-    	numPlayer = floor(Random() * 3) + 2;
-    	currentPlayer = floor(Random() * numPlayer);
+    	numPlayer = (int)floor(Random() * 3) + 2;
+    	currentPlayer = (int)floor(Random() * numPlayer);
 
 		memset(&G, 23, sizeof(struct gameState));   // clear the game state
         r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
-        G.handCount[currentPlayer] = floor(Random() * 7);
-    	baronLocation = floor(Random() * G.handCount[currentPlayer]);
+        G.handCount[currentPlayer] = (int)floor(Random() * 7);
+    	baronLocation = (int)floor(Random() * G.handCount[currentPlayer]);
     	G.hand[currentPlayer][baronLocation] = baron;
     	currentCoins = G.coins;
         int previousNumBuys = G.numBuys;
@@ -54,7 +54,7 @@ int main() {
         		G.hand[currentPlayer][otherCards] = possibleCards[(int)floor(Random() * 15)];
         	}
         }
-        choiceOne = floor(Random() * 2);
+        choiceOne = (int)floor(Random() * 2);
         baronCard(choiceOne, currentPlayer, &G, baronLocation);
 
         //  Assertions
