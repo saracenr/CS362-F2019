@@ -45,7 +45,7 @@ int main() {
         r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
         G.handCount[currentPlayer] = floor(Random() * 7);
     	baronLocation = floor(Random() * G.handCount[currentPlayer]);
-    	G.hand[p][baronLocation] = baron;
+    	G.hand[currentPlayer][baronLocation] = baron;
     	currentCoins = G.coins;
         int previousNumBuys = G.numBuys;
         int estateCount = G.supplyCount[estate];
