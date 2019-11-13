@@ -9,6 +9,7 @@
 int main() {
     int i;
     int seed = 1000;
+    PlantSeeds(seed);
     int numPlayer;
     int currentPlayer;
     int maxBonus = 10;
