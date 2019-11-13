@@ -36,12 +36,19 @@ int main() {
         golds[i] = gold;
     }
 
-    for (runTime = 0; runTime < 100000; runTime++) {
+    for (int j = 0; j < 10; ++j) {
+    	double test_rand = Random();
+    	printf("random value: %f", test_rand);
+    }
+
+    // for (runTime = 0; runTime < 100000; runTime++) {
+    for (runTime = 0; runTime < 10; runTime++) {
+
 
 
     	numPlayer = (int)floor(Random() * 3) + 2;
     	currentPlayer = (int)floor(Random() * numPlayer);
-    	printf("Num player: %d. Current player: %d");
+    	printf("Num player: %d. Current player: %d.\n");
 
 		memset(&G, 23, sizeof(struct gameState));   // clear the game state
         r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
