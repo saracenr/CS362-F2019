@@ -10,7 +10,7 @@
 
 int main() {
     int i;
-    int seed = 1000;
+    int seed = 10;
     PlantSeeds(seed);
     int numPlayer;
     int currentPlayer;
