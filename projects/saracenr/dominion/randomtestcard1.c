@@ -48,7 +48,7 @@ int main() {
 
     	// numPlayer = (int)floor(Random() * 3) + 2;
     	currentPlayer = (int)floor(Random() * numPlayer);
-    	printf("Num player: %d. Current player: %d.\n");
+    	printf("Num player: %d. Current player: %d.\n", numPlayer, currentPlayer);
 
 		memset(&G, 23, sizeof(struct gameState));   // clear the game state
         r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
