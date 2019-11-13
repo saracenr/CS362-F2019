@@ -10,8 +10,8 @@
 
 int main() {
     int i;
-    int seed = 10;
-    PlantSeeds(seed);
+    int seed = 1;
+    PutSeed(seed);
     int numPlayer;
     int currentPlayer;
     int maxBonus = 10;
@@ -41,6 +41,7 @@ int main() {
 
     	numPlayer = (int)floor(Random() * 3) + 2;
     	currentPlayer = (int)floor(Random() * numPlayer);
+    	printf("Num player: %d. Current player: %d");
 
 		memset(&G, 23, sizeof(struct gameState));   // clear the game state
         r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
