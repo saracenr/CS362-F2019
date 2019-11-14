@@ -43,7 +43,7 @@ int main() {
         double floored = floor(rand_3);
         int cast = (int) floored;
         numPlayer = cast + 2;
-    	printf("Rand value: %f.\n Times 3: %f.\nFloored: %f\nCast: %d", rand_value, rand_3, floored, cast);
+    	printf("Rand value: %f.\n Times 3: %f.\nFloored: %f\nCast: %d\n", rand_value, rand_3, floored, cast);
 
 
     	// numPlayer = (int)floor(Random() * 3) + 2;
