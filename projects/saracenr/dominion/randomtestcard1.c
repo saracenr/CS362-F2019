@@ -10,8 +10,8 @@
 
 int main() {
     int i;
-    int seed = 1;
-    PutSeed(-1);
+    int seed = 1000;
+    PlantSeeds(100);
     int numPlayer;
     int currentPlayer;
     int maxBonus = 10;
@@ -51,7 +51,7 @@ int main() {
     	printf("Num player: %d. Current player: %d.\n", numPlayer, currentPlayer);
 
 		memset(&G, 23, sizeof(struct gameState));   // clear the game state
-        r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+        r = initializeGame(numPlayer, k, -1, &G); // initialize a new game
         G.handCount[currentPlayer] = (int)floor(Random() * 7);
     	baronLocation = (int)floor(Random() * G.handCount[currentPlayer]);
     	G.hand[currentPlayer][baronLocation] = baron;
