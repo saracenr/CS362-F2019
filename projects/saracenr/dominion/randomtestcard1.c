@@ -37,13 +37,13 @@ int main() {
     }
 
     // for (runTime = 0; runTime < 100000; runTime++) {
-    for (runTime = 0; runTime < 10; runTime++) {
+    for (runTime = 0; runTime < 1000; runTime++) {
         double rand_value = Random();
         double rand_3 = rand_value * 3;
         double floored = floor(rand_3);
         int cast = (int) floored;
         numPlayer = cast + 2;
-    	printf("Rand value: %f.\n Times 3: %f.\nFloored: %f\nCast: %d\n", rand_value, rand_3, floored, cast);
+    	printf("Rand value: %f.\nTimes 3: %f.\nFloored: %f\nCast: %d\n", rand_value, rand_3, floored, cast);
 
 
     	// numPlayer = (int)floor(Random() * 3) + 2;
