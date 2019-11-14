@@ -118,6 +118,7 @@ int main() {
         if (G.discard[currentPlayer][G.discardCount[currentPlayer]] != minion) {  //  Asserts that the minion card was discarded and not trashed.
             printf("Minion card was not discarded after being played!\n");
         }
+    }
     printf("Tests Completed!\n");
     return 0;
 }
