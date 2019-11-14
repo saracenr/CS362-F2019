@@ -31,6 +31,21 @@ player: player.c interface.o
 randomtest1: randomtestcard1.c dominion.o rngs.o cardFunctions.o
 	gcc  -o randomtest1 -g  randomtestcard1.c dominion.o rngs.o cardFunctions.o $(CFLAGS)
 
+randomtest2: randomtestcard2.c dominion.o rngs.o cardFunctions.o
+	gcc  -o randomtest2 -g  randomtestcard2.c dominion.o rngs.o cardFunctions.o $(CFLAGS)
+
+randomtest3: randomtestcard3.c dominion.o rngs.o cardFunctions.o
+	gcc  -o randomtest3 -g  randomtestcard3.c dominion.o rngs.o cardFunctions.o $(CFLAGS)
+
+randomtests: randomtest1 randomtest2 randomtest3
+
+randomtestresults: randomtests
+	./randomtest1 &> randomtestresults.out
+	./randomtest2 &> randomtestresults.out
+	./randomtest3 &> randomtestresults.out
+	gcov cardFunctions.c -b -f >> unittestresult.out
+	cat cardFunctions.c.gcov >> unittestresult.out
+
 all: playdom player 
 
 clean:
