@@ -37,21 +37,20 @@ int main() {
     }
 
     // for (runTime = 0; runTime < 100000; runTime++) {
-    for (runTime = 0; runTime < 1000; runTime++) {
+    for (runTime = 0; runTime < 100000; runTime++) {
     	SelectStream(2);
-
         double rand_value = Random();
         double rand_3 = rand_value * 3;
-        double rand_1000 = rand_value * 1000;
+        // double rand_1000 = rand_value * 1000;
         double floored = floor(rand_3);
         int cast = (int) floored;
         numPlayer = cast + 2;
-    	printf("Rand value: %f.\nTimes 3: %f.\nFloored: %f\nCast: %d\n", rand_value, rand_3, floored, cast);
+    	// printf("Rand value: %f.\nTimes 3: %f.\nFloored: %f\nCast: %d\n", rand_value, rand_3, floored, cast);
 
 
     	// numPlayer = (int)floor(Random() * 3) + 2;
     	currentPlayer = (int)floor(Random() * numPlayer);
-    	printf("Num player: %d. Current player: %d.\n", numPlayer, currentPlayer);
+    	// printf("Num player: %d. Current player: %d.\n", numPlayer, currentPlayer);
 
 		memset(&G, 23, sizeof(struct gameState));   // clear the game state
         r = initializeGame(numPlayer, k, -1, &G); // initialize a new game
