@@ -105,7 +105,7 @@ int main() {
             if (((estate <= G.discard[nextPlayer][G.discardCount[nextPlayer]]
                  && G.discard[nextPlayer][G.discardCount[nextPlayer]] <= province)
                  || G.discard[nextPlayer][G.discardCount[nextPlayer]] == gardens)
-                 && G.handCount[p] != handCount + 1 ) {
+                 && G.handCount[currentPlayer] != handCount + 1 ) {
                 printf("Handsize is incorrect for reveal of two victory cards!\n");
             }
 
@@ -127,7 +127,7 @@ int main() {
             if (((estate <= G.discard[nextPlayer][G.discardCount[nextPlayer]]
                  && G.discard[nextPlayer][G.discardCount[nextPlayer]] <= province)
                  || G.discard[nextPlayer][G.discardCount[nextPlayer]] == gardens)
-                 && G.handCount[p] != handCount + 1 ) {
+                 && G.handCount[currentPlayer] != handCount + 1 ) {
                 printf("Handsize is incorrect for reveal of one victory cards!\n");
             }
 
