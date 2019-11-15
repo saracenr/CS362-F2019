@@ -82,7 +82,7 @@ int main() {
 
         //  Adding cards to the discard of the next player
         for (int nextPlayerDiscard = 0; nextPlayerDiscard < G.discardCount[nextPlayer]; nextPlayerDiscard++) {
-            addedCard = possibleCards[(int)floor(Random() * 15)]
+            addedCard = possibleCards[(int)floor(Random() * 15)];
             G.discard[nextPlayer][nextPlayerDiscard] = addedCard;
             checkCards[checkCardsSize] = addedCard;
             checkCardsSize++;
@@ -90,28 +90,33 @@ int main() {
 
         //  Adding cards to the deck of the next player
         for (int addPlayerDeck = 0; addPlayerDeck < nextPlayerDeck; addPlayerDeck++) {
-            addedCard = possibleCards[(int)floor(Random() * 15)]
+            addedCard = possibleCards[(int)floor(Random() * 15)];
             G.deck[nextPlayer][addPlayerDeck] = addedCard;
             checkCards[checkCardsSize] = addedCard;
             checkCardsSize++;
         }
 
-        tributeCard(1, currentPlayer, nextPlayer, , &G, tributeLocation);
+        tributeCard(1, currentPlayer, nextPlayer, &G, tributeLocation);
 
         printf("Current player is %d.  Tribute is at location %d.\n", currentPlayer, tributeLocation);
 
         //  Assertions
         if (G.discard[nextPlayer][G.discardCount[nextPlayer]] == G.discard[nextPlayer][G.discardCount[nextPlayer]-1]) {  // Assert that if both cards are of the same type that are revealed then the correct action is taken
-            if ((estate <= G.discard[nextPlayer][G.discardCount[nextPlayer]] <= province || G.discard[nextPlayer][G.discardCount[nextPlayer]] == gardens)
+            if (((estate <= G.discard[nextPlayer][G.discardCount[nextPlayer]]
+                 && G.discard[nextPlayer][G.discardCount[nextPlayer]] <= province)
+                 || G.discard[nextPlayer][G.discardCount[nextPlayer]] == gardens)
                  && G.handCount[p] != handCount + 1 ) {
                 printf("Handsize is incorrect for reveal of two victory cards!\n");
             }
 
-            if (copper <= G.discard[nextPlayer][G.discardCount[nextPlayer]] <= gold && G.coins != currentCoins + 2) {
+            if (copper <= G.discard[nextPlayer][G.discardCount[nextPlayer]]
+                && G.discard[nextPlayer][G.discardCount[nextPlayer]] <= gold 
+                && G.coins != currentCoins + 2) {
                 printf("Coins is incorrect for reveal of two treasure cards!\n");
             }
 
-            if (adventurer <= G.discard[nextPlayer][G.discardCount[nextPlayer]] <= treasureMap
+            if (adventurer <= G.discard[nextPlayer][G.discardCount[nextPlayer]]
+                 && G.discard[nextPlayer][G.discardCount[nextPlayer]] <= treasure_map
                  && G.discard[nextPlayer][G.discardCount[nextPlayer]] != gardens
                  && currentActions != 2) {
                 printf("Actions is incorrect for reveal of two treasure cards!\n");
@@ -119,16 +124,21 @@ int main() {
         }
 
         if (G.discard[nextPlayer][G.discardCount[nextPlayer]] != G.discard[nextPlayer][G.discardCount[nextPlayer]-1]) {  // Assert that if both cards are not the same type that are revealed then the correct action is taken
-            if ((estate <= G.discard[nextPlayer][G.discardCount[nextPlayer]] <= province || G.discard[nextPlayer][G.discardCount[nextPlayer]] == gardens)
+            if (((estate <= G.discard[nextPlayer][G.discardCount[nextPlayer]]
+                 && G.discard[nextPlayer][G.discardCount[nextPlayer]] <= province)
+                 || G.discard[nextPlayer][G.discardCount[nextPlayer]] == gardens)
                  && G.handCount[p] != handCount + 1 ) {
                 printf("Handsize is incorrect for reveal of one victory cards!\n");
             }
 
-            if (copper <= G.discard[nextPlayer][G.discardCount[nextPlayer]] <= gold && G.coins != currentCoins + 2) {
+            if (copper <= G.discard[nextPlayer][G.discardCount[nextPlayer]]
+                && G.discard[nextPlayer][G.discardCount[nextPlayer]] <= gold 
+                && G.coins != currentCoins + 2) {
                 printf("Coins is incorrect for reveal of one treasure cards!\n");
             }
 
-            if (adventurer <= G.discard[nextPlayer][G.discardCount[nextPlayer]] <= treasureMap
+            if (adventurer <= G.discard[nextPlayer][G.discardCount[nextPlayer]]
+                 && G.discard[nextPlayer][G.discardCount[nextPlayer]] <= treasure_map
                  && G.discard[nextPlayer][G.discardCount[nextPlayer]] != gardens
                  && currentActions != 2) {
                 printf("Actions is incorrect for reveal of one treasure cards!\n");
