@@ -56,7 +56,7 @@ int main() {
         handCount = (int)floor(Random() * 7);
         G.handCount[currentPlayer] = handCount;
     	minionLocation = (int)floor(Random() * G.handCount[currentPlayer]);
-    	G.hand[currentPlayer][minionLocation] = baron;
+    	G.hand[currentPlayer][minionLocation] = minion;
         currentActions = 1;
     	currentCoins = G.coins;
         for (int otherCards = 0; otherCards <= G.handCount[currentPlayer]; otherCards++) {
@@ -84,7 +84,7 @@ int main() {
 
         minionCard(choiceOne, choiceTwo, currentPlayer, &G, minionLocation);
 
-        printf("Current player is %d.  Baron is at location %d.  ChoiceOne is %d.\n", currentPlayer, minionLocation, choiceOne);
+        printf("Current player is %d.  Minion is at location %d.  ChoiceOne is %d.\n", currentPlayer, minionLocation, choiceOne);
 
         //  Assertions
         if (G.numActions != 1) {  // Assert that actions were incremented no matter what
