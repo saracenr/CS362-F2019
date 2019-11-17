@@ -37,7 +37,7 @@ int main() {
     }
 
     // for (runTime = 0; runTime < 100000; runTime++) {
-    for (runTime = 0; runTime < 100000; runTime++) {
+    for (runTime = 0; runTime < 1000000; runTime++) {
     	SelectStream(2);
         double rand_value = Random();
         double rand_3 = rand_value * 3;
