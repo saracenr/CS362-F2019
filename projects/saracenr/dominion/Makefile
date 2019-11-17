@@ -40,9 +40,9 @@ randomtest3: randomtestcard3.c dominion.o rngs.o cardFunctions.o
 randomtests: randomtest1 randomtest2 randomtest3
 
 randomtestresults: randomtests
-	./randomtest1 &> randomtestresults.out
-	./randomtest2 &> randomtestresults.out
-	./randomtest3 &> randomtestresults.out
+	randomtest1 &> randomtestresults.out
+	randomtest2 &> randomtestresults.out
+	randomtest3 &> randomtestresults.out
 	gcov cardFunctions.c -b -f >> unittestresult.out
 	cat cardFunctions.c.gcov >> unittestresult.out
 
