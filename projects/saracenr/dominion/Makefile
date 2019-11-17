@@ -43,8 +43,8 @@ randomtestresults: randomtests
 	randomtest1 &> randomtestresults.out
 	randomtest2 &> randomtestresults.out
 	randomtest3 &> randomtestresults.out
-	gcov cardFunctions.c -b -f >> unittestresult.out
-	cat cardFunctions.c.gcov >> unittestresult.out
+	gcov cardFunctions.c -b -f >> randomtestresults.out
+	cat cardFunctions.c.gcov >> randomtestresults.out
 
 all: playdom player 
 
