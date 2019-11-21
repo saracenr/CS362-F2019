@@ -1,6 +1,5 @@
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "cardFunctions.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
@@ -69,7 +68,7 @@ int main() {
 			                	}
 			                }
 
-			                int successful = ambassadorCard(revealedCard,choice, p, &G, ambassadorLocation);
+			                int successful = ambassadorCard(p, revealedCard, choice, &G, ambassadorLocation);
 		#if (NOISY_TEST == 1)
 			printf("Handsize is %d, Ambassador is at pos %d. They chose to reveal %d card copies.\n", handCount, ambassadorLocation, choice);
 		#endif

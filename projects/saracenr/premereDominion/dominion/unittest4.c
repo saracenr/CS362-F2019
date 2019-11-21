@@ -1,6 +1,5 @@
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "cardFunctions.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
@@ -79,7 +78,8 @@ int main() {
 	                	G.deck[nextPlayer][addPlayerDeck] = makeDeck[addPlayerDeck];
 	                }
 
-	                tributeCard(1, p, nextPlayer,  &G, tributeLocation);
+                    int* revealedCards;
+	                cardTribute(p, nextPlayer, &G, revealedCards);
 
 	#if (NOISY_TEST == 1)
 	                printf("Handsize is %d, Tribute is at pos %d.\n", handCount, tributeLocation);

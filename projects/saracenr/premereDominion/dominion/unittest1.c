@@ -1,6 +1,5 @@
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "cardFunctions.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
@@ -55,7 +54,7 @@ int main() {
 	                		G.hand[p][otherCards] = k[otherCards];
 	                	}
 	                }
-	                baronCard(choiceOne, p, &G, baronLocation);
+	                cardBaron(p, choiceOne, &G);
 	#if (NOISY_TEST == 1)
 	                printf("Handsize is %d, Baron is at pos %d. No Estate in hand.\n", handCount, baronLocation);
 	#endif
@@ -99,7 +98,7 @@ int main() {
 				                		G.hand[p][otherCards] = k[otherCards];
 				                	}
 				                }
-				                baronCard(choiceOne, p, &G, baronLocation);
+				                cardBaron(p, choiceOne, &G);
 
 							                //  Assertions
 								if (G.coins != currentCoins + 4) {  // Assert that buys were incremented

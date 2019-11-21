@@ -1403,6 +1403,18 @@ int gainCard(int supplyPos, struct gameState *state, int toFlag, int player)
     return 0;
 }
 
+int cardFinder(int cardToFind, int player, struct gameState *state, int currentCardHandPos) {
+    // Iterates over the hand to try to find the cardToFind
+    for (int p = 0; p <= state->handCount[player]; p++) {
+        //  If card is found it returns its index position p
+        if (state->hand[player][p] == cardToFind && p != currentCardHandPos) {
+            return p;
+        }
+    }
+    //  returns -1 if card is not found in current players hand
+    return -1;
+}
+
 int updateCoins(int player, struct gameState *state, int bonus)
 {
     int i;

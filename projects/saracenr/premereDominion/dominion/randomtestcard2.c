@@ -1,6 +1,5 @@
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "cardFunctions.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
@@ -82,7 +81,7 @@ int main() {
             choiceTwo = 1;
         }
 
-        minionCard(choiceOne, choiceTwo, currentPlayer, &G, minionLocation);
+        cardMinion(currentPlayer, choiceOne, choiceTwo, &G, minionLocation);
 
         printf("Current player is %d.  Minion is at location %d.  ChoiceOne is %d.\n", currentPlayer, minionLocation, choiceOne);
 

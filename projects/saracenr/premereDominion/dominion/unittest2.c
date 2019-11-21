@@ -1,6 +1,5 @@
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "cardFunctions.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
@@ -61,10 +60,10 @@ int main() {
 	                	}
 	                }
 	                if (choice == 0) {
-	                	minionCard(1, 0, p, &G, minionLocation);
+	                	cardMinion(p, 1, 0, &G, minionLocation);
 	                }
 	                else {
-	                	minionCard(0, 1, p, &G, minionLocation);
+	                	cardMinion(p, 0, 1, &G, minionLocation);
 	                }
 
 	#if (NOISY_TEST == 1)

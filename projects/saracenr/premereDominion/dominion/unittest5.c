@@ -1,6 +1,5 @@
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "cardFunctions.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
@@ -56,7 +55,7 @@ int main() {
 	                		G.hand[p][otherCards] = k[otherCards];
 	                	}
 	                }
-	                mineCard(choiceOne,treasures[choiceOne], p, &G, mineLocation);
+	                cardMine(p, choiceOne, treasures[choiceOne], &G, mineLocation);
 	#if (NOISY_TEST == 1)
 	                printf("Handsize is %d, Mine is at pos %d. No treasure in hand.\n", handCount, mineLocation);
 	#endif
@@ -92,7 +91,7 @@ int main() {
 					                		G.hand[p][otherCards] = k[otherCards];
 					                	}
 					                }
-					                mineCard(treasureLocation, treasures[treasureChoice], p, &G, mineLocation);
+					                cardMine(p, treasureLocation, treasures[treasureChoice], &G, mineLocation);
 
 									//  Assertions
 					                if (G.hand[p][treasureLocation] + 3 >= treasures[treasureChoice] && cardFinder(treasures[choiceOne], p, &G, mineLocation) >= 0) {  // Assert that does gain a copy of the chosen card

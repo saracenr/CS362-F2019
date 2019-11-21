@@ -1,6 +1,5 @@
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "cardFunctions.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
@@ -96,7 +95,8 @@ int main() {
             checkCardsSize++;
         }
 
-        tributeCard(1, currentPlayer, nextPlayer, &G, tributeLocation);
+        int* revealedCards = NULL;
+        cardTribute(currentPlayer, nextPlayer, &G, revealedCards);
 
         printf("Current player is %d.  Tribute is at location %d.\n", currentPlayer, tributeLocation);
 

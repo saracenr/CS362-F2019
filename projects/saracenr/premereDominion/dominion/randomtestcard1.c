@@ -1,6 +1,5 @@
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "cardFunctions.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
@@ -66,7 +65,7 @@ int main() {
         	}
         }
         choiceOne = (int)floor(Random() * 2);
-        baronCard(choiceOne, currentPlayer, &G, baronLocation);
+        cardBaron(currentPlayer, choiceOne, &G);
 
         printf("Current player is %d.  Baron is at location %d.  ChoiceOne is %d.\n", currentPlayer, baronLocation, choiceOne);
 
