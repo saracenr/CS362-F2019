@@ -78,7 +78,7 @@ int main() {
 	                	G.deck[nextPlayer][addPlayerDeck] = makeDeck[addPlayerDeck];
 	                }
 
-                    int revealedCards[2];
+                    int revealedCards[2] = {G.discard[nextPlayer][G.discardCount[nextPlayer]], G.discard[nextPlayer][G.discardCount[nextPlayer]-1]};
 	                cardTribute(p, nextPlayer, &G, revealedCards);
 
 	#if (NOISY_TEST == 1)
