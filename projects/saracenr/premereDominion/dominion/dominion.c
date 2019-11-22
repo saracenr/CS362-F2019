@@ -1303,7 +1303,7 @@ int cardTribute(int currentPlayer, int nextPlayer, struct gameState *state, int 
 
         if (tributeRevealedCards[0] == tributeRevealedCards[1]) { //If we have a duplicate card, just drop one
             state->playedCards[state->playedCardCount] = tributeRevealedCards[1];
-            state->playedCardCount--;       // should be ++ not --
+            state->playedCardCount++;       // should be ++ not -- FIXED TO RUN CODE
             tributeRevealedCards[1] = -1;
         }
 

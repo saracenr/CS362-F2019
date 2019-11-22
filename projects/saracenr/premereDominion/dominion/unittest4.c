@@ -78,7 +78,7 @@ int main() {
 	                	G.deck[nextPlayer][addPlayerDeck] = makeDeck[addPlayerDeck];
 	                }
 
-                    int* revealedCards;
+                    int[2] revealedCards;
 	                cardTribute(p, nextPlayer, &G, revealedCards);
 
 	#if (NOISY_TEST == 1)
