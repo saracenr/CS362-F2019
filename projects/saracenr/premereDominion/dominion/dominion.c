@@ -1152,7 +1152,7 @@ int cardMinion(int currentPlayer, int choice1, int choice2, struct gameState *st
         //discard card from hand
         discardCard(handPos, currentPlayer, state, 0);
 
-        if (choice1)	// should be else if (choice2) not if(choice1)	
+        if (choice2)	// should be else if (choice2) not if(choice1)	//FIXED TO RUN TESTS
         //discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
         {
             //discard hand
@@ -1192,7 +1192,7 @@ int cardMinion(int currentPlayer, int choice1, int choice2, struct gameState *st
             }
 
         }
-        else if (choice2)   // should be if (choice1) not else if (choice2)
+        else if (choice1)   // should be if (choice1) not else if (choice2)
         {
             state->coins = state->coins + 2;
         }
