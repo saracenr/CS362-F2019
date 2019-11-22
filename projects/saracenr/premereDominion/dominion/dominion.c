@@ -1205,7 +1205,7 @@ int cardAmbassador(int currentPlayer, int choice1, int choice2, struct gameState
 {
         int i, j = 0;		//used to check if player has enough cards to discard
 
-        if (choice2 < 2 || choice2 > 0)     // should be > < not < >
+        if (choice2 > 2 || choice2 < 0)     // should be > < not < > FIXED FOR TESTING
         {
             return -1;
         }
