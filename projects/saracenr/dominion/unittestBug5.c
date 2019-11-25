@@ -1,6 +1,5 @@
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "cardFunctions.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
@@ -24,7 +23,7 @@ int main() {
     G.handCount[p] = 6; // set the number of cards on hand
     G.discardCount[p] = 10;
     G.deckCount[p] = 15;
-    //  Fill the entire hand with VP cards
+    //  Fill the entire hand with VP cards: 1 Curse,1 estate, 1 Duchy, 1 Province, 1 Greathall, 1 Garden
     for (int vpCards = 0; vpCards < G.handCount[p]; vpCards++) {
         if (vpCards == 4) {
             G.hand[p][vpCards] = gardens;
@@ -37,7 +36,7 @@ int main() {
         }
     }
 
-    //  Fill the entire discard with VP cards
+    //  Fill the entire hand with VP cards: 2 Curse, 2 estate, 2 Duchy, 2 Province, 1 Greathall, 1 Garden
     for (int vpCards = 0; vpCards < G.discardCount[p]; vpCards++) {
         if (vpCards == 4) {
             G.hand[p][vpCards] = gardens;
@@ -50,7 +49,7 @@ int main() {
         }
     }
 
-    //  Fill the entire deck with estates
+    //  Fill the entire hand with VP cards: 3 Curse,3 estate, 3 Duchy, 4 Province, 1 Greathall, 1 Garden
     for (int vpCards = 0; vpCards < G.deckCount[p]; vpCards++) {
         if (vpCards == 4) {
             G.hand[p][vpCards] = gardens;
@@ -63,7 +62,7 @@ int main() {
         }
     }
 
-    int expectedScore = 9 + 10 + 19 + 27; // Gardens + hand + discard + deck
+    int expectedScore = -6 + 6 + 18 + 42 + 3 + 9; // Curses + estates + Duchys + Prov + great_hall + garden
     int actualScore = scoreFor(p,&G);
 
     if (expectedScore != actualScore) {
