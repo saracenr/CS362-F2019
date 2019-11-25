@@ -39,26 +39,26 @@ int main() {
     //  Fill the entire hand with VP cards: 2 Curse, 2 estate, 2 Duchy, 2 Province, 1 Greathall, 1 Garden
     for (int vpCards = 0; vpCards < G.discardCount[p]; vpCards++) {
         if (vpCards == 4) {
-            G.hand[p][vpCards] = gardens;
+            G.discard[p][vpCards] = gardens;
         }
         else if (vpCards == 5) {
-            G.hand[p][vpCards] = great_hall;
+            G.discard[p][vpCards] = great_hall;
         }
         else {
-           G.hand[p][vpCards] = vpCards % 4; 
+           G.discard[p][vpCards] = vpCards % 4; 
         }
     }
 
     //  Fill the entire hand with VP cards: 3 Curse,3 estate, 3 Duchy, 4 Province, 1 Greathall, 1 Garden
     for (int vpCards = 0; vpCards < G.deckCount[p]; vpCards++) {
         if (vpCards == 4) {
-            G.hand[p][vpCards] = gardens;
+            G.deck[p][vpCards] = gardens;
         }
         else if (vpCards == 5) {
-            G.hand[p][vpCards] = great_hall;
+            G.deck[p][vpCards] = great_hall;
         }
         else {
-           G.hand[p][vpCards] = vpCards % 4; 
+           G.deck[p][vpCards] = vpCards % 4; 
         }
     }
 
