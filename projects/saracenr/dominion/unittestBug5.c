@@ -21,25 +21,49 @@ int main() {
 
     memset(&G, 23, sizeof(struct gameState));   // clear the game state
     r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
-    G.handCount[p] = 5; // set the number of cards on hand
+    G.handCount[p] = 6; // set the number of cards on hand
     G.discardCount[p] = 10;
     G.deckCount[p] = 15;
-    //  Fill the entire hand with estate cards
-    for (int estateCards = 0; estateCards <= G.handCount[p]; estateCards++) {
-        G.hand[p][estateCards] = estate;
+    //  Fill the entire hand with VP cards
+    for (int vpCards = 0; vpCards < G.handCount[p]; vpCards++) {
+        if (vpCards == 4) {
+            G.hand[p][vpCards] = gardens;
+        }
+        else if (vpCards == 5) {
+            G.hand[p][vpCards] = great_hall;
+        }
+        else {
+           G.hand[p][vpCards] = vpCards; 
+        }
     }
 
-    //  Fill the entire discard with estates
-    for (int estateCards = 0; estateCards <= G.discardCount[p]; estateCards++) {
-        G.discard[p][estateCards] = estate;
+    //  Fill the entire discard with VP cards
+    for (int vpCards = 0; vpCards < G.discardCount[p]; vpCards++) {
+        if (vpCards == 4) {
+            G.hand[p][vpCards] = gardens;
+        }
+        else if (vpCards == 5) {
+            G.hand[p][vpCards] = great_hall;
+        }
+        else {
+           G.hand[p][vpCards] = vpCards % 4; 
+        }
     }
 
     //  Fill the entire deck with estates
-    for (int estateCards = 0; estateCards <= G.deckCount[p]; estateCards++) {
-        G.deck[p][estateCards] = estate;
+    for (int vpCards = 0; vpCards < G.deckCount[p]; vpCards++) {
+        if (vpCards == 4) {
+            G.hand[p][vpCards] = gardens;
+        }
+        else if (vpCards == 5) {
+            G.hand[p][vpCards] = great_hall;
+        }
+        else {
+           G.hand[p][vpCards] = vpCards % 4; 
+        }
     }
 
-    int expectedScore = G.deckCount[p] + G.discardCount[p] + G.handCount[p]
+    int expectedScore = 9 + 10 + 19 + 27 // Gardens + hand + discard + deck
     int actualScore = scoreFor(p,&G);
 
     if (expectedScore != actualScore) {
