@@ -63,12 +63,12 @@ int main() {
         }
     }
 
-    int expectedScore = 9 + 10 + 19 + 27 // Gardens + hand + discard + deck
+    int expectedScore = 9 + 10 + 19 + 27; // Gardens + hand + discard + deck
     int actualScore = scoreFor(p,&G);
 
     if (expectedScore != actualScore) {
-        printf("The actual score is not correct.\n")
-        printf("Expected score is %d.\n", expectedScore)
-        printf("Actual score was %d.\n", actualScore)
+        printf("The actual score is not correct.\n");
+        printf("Expected score is %d.\n", expectedScore);
+        printf("Actual score was %d.\n", actualScore);
     }
 }
