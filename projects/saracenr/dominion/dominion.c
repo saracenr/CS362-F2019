@@ -767,6 +767,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     case feast:
         //gain card with cost up to 5
         //Backup hand
+        printf("I made it to the feast statement!\n");
         for (i = 0; i <= state->handCount[currentPlayer]; i++) {
             temphand[i] = state->hand[currentPlayer][i];//Backup card
             state->hand[currentPlayer][i] = -1;//Set to nothing
