@@ -22,9 +22,9 @@ int main() {
     for (int eachCard = 0; eachCard < 3; eachCard++) {
         memset(&G, 23, sizeof(struct gameState));   // clear the game state
         r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
-        G.handCount[p] = 5; // set the number of cards on hand
-        G.discardCount[p] = 10;
-        G.deckCount[p] = 15;
+        // G.handCount[p] = 5; // set the number of cards on hand
+        // G.discardCount[p] = 10;
+        // G.deckCount[p] = 15;
 
         // for (int addCards = 0; addCards < G.handCount[p]; addCards++) {
         //     G.hand[p][addCards] = estate;
