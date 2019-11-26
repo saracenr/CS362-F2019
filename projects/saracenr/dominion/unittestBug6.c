@@ -45,7 +45,7 @@ int main() {
 
         printf("The last card in the discard is: %d\n", G.discard[p][1]);
         cardEffect(feast, testCards[eachCard], 0, 0, &G, 0, &maxBonus);
-        printf("The last card in the discard is: %d\n", G.discard[p][10]);
+        printf("The last card in the discard is: %d\n", G.discard[p][12]);
 
         if (currentCoins != G.coins) {
             printf("The number of coins for the player is incorrect!\n");
