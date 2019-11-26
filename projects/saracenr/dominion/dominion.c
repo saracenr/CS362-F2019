@@ -772,7 +772,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
             state->hand[currentPlayer][i] = -1;//Set to nothing
         }
         //Backup hand
-
+        printf("I made it past the temp hand!\n");
         //Update Coins for Buy
         // updateCoins(currentPlayer, state, 5);
         x = 1;//Condition to loop on
