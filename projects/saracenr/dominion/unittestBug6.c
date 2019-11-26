@@ -27,15 +27,15 @@ int main() {
         G.discardCount[p] = 10;
         G.deckCount[p] = 15;
 
-        for (int addCards = 0; addCards <= G.handCount[p]; addCards++) {
+        for (int addCards = 0; addCards < G.handCount[p]; addCards++) {
             G.hand[p][addCards] = estate;
         }
 
-        for (int addCards = 0; addCards <= G.discardCount[p]; addCards++) {
+        for (int addCards = 0; addCards < G.discardCount[p]; addCards++) {
             G.discard[p][addCards] = estate;
         }
 
-        for (int addCards = 0; addCards <= G.deckCount[p]; addCards++) {
+        for (int addCards = 0; addCards < G.deckCount[p]; addCards++) {
             G.deck[p][addCards] = estate;
         }
 
@@ -43,9 +43,9 @@ int main() {
         int currentCoins = G.coins;
         G.hand[p][0] = feast;
 
-        printf("The last card in the discard is: %d\n", G.discard[p][14]);
+        printf("The last card in the discard is: %d\n", G.discard[p][1]);
         cardEffect(feast, testCards[eachCard], 0, 0, &G, 0, &maxBonus);
-        printf("The last card in the discard is: %d\n", G.discard[p][ 15 ]);
+        printf("The last card in the discard is: %d\n", G.discard[p][10]);
 
         if (currentCoins != G.coins) {
             printf("The number of coins for the player is incorrect!\n");
