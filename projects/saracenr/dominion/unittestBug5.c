@@ -62,7 +62,7 @@ int main() {
         }
     }
 
-    int expectedScore = -5 + 5 + 18 + 30 + 3 + 9; // Curses + estates + Duchys + Prov + great_hall + garden
+    int expectedScore = -5 + 5 + 18 + 30 + 3 + 9; // Curses + estates + Duchys + Prov + great_hall + garden SHOULD BE 60
     int actualScore = scoreFor(p,&G);
 
     if (expectedScore != actualScore) {
