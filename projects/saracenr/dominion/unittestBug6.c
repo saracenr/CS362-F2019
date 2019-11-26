@@ -38,11 +38,11 @@ int main() {
             G.deck[p][addCards] = estate;
         }
 
+        G.coins = 0;
         int currentCoins = G.coins;
         G.hand[p][0] = feast;
-        G.coins = 0;
 
-        // cardEffect(feast, testCards[eachCard], 0, 0, &G, 0, &maxBonus);
+        cardEffect(feast, testCards[eachCard], 0, 0, &G, 0, &maxBonus);
 
         if (currentCoins != G.coins) {
             printf("The number of coins for the player is incorrect!\n");
