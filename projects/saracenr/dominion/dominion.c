@@ -768,10 +768,10 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
         //gain card with cost up to 5
         //Backup hand
         // printf("I made it to the feast statement!\n");
-        for (i = 0; i <= state->handCount[currentPlayer]; i++) {
-            temphand[i] = state->hand[currentPlayer][i];//Backup card
-            state->hand[currentPlayer][i] = -1;//Set to nothing
-        }
+        // for (i = 0; i <= state->handCount[currentPlayer]; i++) {
+        //     temphand[i] = state->hand[currentPlayer][i];//Backup card
+        //     state->hand[currentPlayer][i] = -1;//Set to nothing
+        // }
         //Backup hand
         // printf("I made it past the temp hand!\n");
         //Update Coins for Buy
@@ -813,10 +813,10 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
         }
         // printf("I made it past the loop!\n");
         // //Reset Hand
-        for (i = 0; i <= state->handCount[currentPlayer]; i++) {
-            state->hand[currentPlayer][i] = temphand[i];
-            temphand[i] = -1;
-        }
+        // for (i = 0; i <= state->handCount[currentPlayer]; i++) {
+        //     state->hand[currentPlayer][i] = temphand[i];
+        //     temphand[i] = -1;
+        // }
         //Reset Hand
 
         return 0;
