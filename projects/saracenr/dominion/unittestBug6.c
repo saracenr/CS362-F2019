@@ -26,17 +26,17 @@ int main() {
         G.discardCount[p] = 10;
         G.deckCount[p] = 15;
 
-        for (int addCards = 0; addCards < G.handCount[p]; addCards++) {
-            G.hand[p][addCards] = estate;
-        }
+        // for (int addCards = 0; addCards < G.handCount[p]; addCards++) {
+        //     G.hand[p][addCards] = estate;
+        // }
 
-        for (int addCards = 0; addCards < G.discardCount[p]; addCards++) {
-            G.discard[p][addCards] = estate;
-        }
+        // for (int addCards = 0; addCards < G.discardCount[p]; addCards++) {
+        //     G.discard[p][addCards] = estate;
+        // }
 
-        for (int addCards = 0; addCards < G.deckCount[p]; addCards++) {
-            G.deck[p][addCards] = estate;
-        }
+        // for (int addCards = 0; addCards < G.deckCount[p]; addCards++) {
+        //     G.deck[p][addCards] = estate;
+        // }
 
         G.coins = 0;
         int currentCoins = G.coins;
