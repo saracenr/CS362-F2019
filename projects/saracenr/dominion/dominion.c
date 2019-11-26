@@ -801,7 +801,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
                 if (DEBUG) {
                     printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
                 }
-
+                printf("I actually am calling gain card.\n");
                 gainCard(choice1, state, 0, currentPlayer);//Gain the card
                 x = 0;//No more buying cards
 

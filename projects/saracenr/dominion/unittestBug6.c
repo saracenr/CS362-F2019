@@ -56,7 +56,5 @@ int main() {
         if (G.discard[p][G.discardCount[p]] != testCards[eachCard] && testCards[eachCard] == gold) {
             printf("The player gained a card when it was an invalid choice of card.\n");
         }
-
-
     }
 }
