@@ -11,7 +11,7 @@ int main() {
     int seed = 1000;
     int numPlayer = 2;
     int maxBonus = 10;
-    int p = 1;
+    int p = 0;
     int r, handCount;
     int k[10] = {adventurer, council_room, feast, gardens, mine
                , remodel, smithy, village, baron, great_hall};
