@@ -30,33 +30,30 @@ int main() {
         for (int addCards = 0; addCards < G.handCount[p]; addCards++) {
             G.hand[p][addCards] = estate;
         }
-        printf("I made the hand!\n");
+
         for (int addCards = 0; addCards < G.discardCount[p]; addCards++) {
             G.discard[p][addCards] = estate;
         }
-        printf("I made the discard!\n");
+
         for (int addCards = 0; addCards < G.deckCount[p]; addCards++) {
             G.deck[p][addCards] = estate;
         }
-        printf("I made the deck!\n");
+
         G.coins = 0;
         int currentCoins = G.coins;
         G.hand[p][0] = feast;
 
-        printf("I made the feast!\n");
         cardEffect(feast, testCards[eachCard], 0, 0, &G, 0, &maxBonus);
-
-        printf("I played the feast card!\n");
 
         if (currentCoins != G.coins) {
             printf("The number of coins for the player is incorrect!\n");
         }
 
-        if (G.hand[p][5] != testCards[eachCard] && testCards[eachCard] != gold) {
+        if (G.discard[p][G.discardCount[p]] != testCards[eachCard] && testCards[eachCard] != gold) {
             printf("The player did not gain the card and it was a valid card choice.\n");
         }
 
-        if (G.hand[p][5] != testCards[eachCard] && testCards[eachCard] == gold) {
+        if (G.discard[p][G.discardCount[p]] != testCards[eachCard] && testCards[eachCard] == gold) {
             printf("The player gained a card when it was an invalid choice of card.\n");
         }
 
