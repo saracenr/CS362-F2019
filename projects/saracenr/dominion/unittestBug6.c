@@ -23,12 +23,26 @@ int main() {
         memset(&G, 23, sizeof(struct gameState));   // clear the game state
         r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
         G.handCount[p] = 5; // set the number of cards on hand
-        G.coins = 0;
+        G.discardCount[p] = 10;
+        G.deckCount[p] = 15;
+
+        for (int addCards = 0; addCards < G.handCount[p]; addCards++) {
+            G.hand[p][addCards] = estate;
+        }
+
+        for (int addCards = 0; addCards < G.discardCount[p]; addCards++) {
+            G.discard[p][addCards] = estate;
+        }
+
+        for (int addCards = 0; addCards < G.deckCount[p]; addCards++) {
+            G.deck[p][addCards] = estate;
+        }
+
         int currentCoins = G.coins;
         G.hand[p][0] = feast;
+        G.coins = 0;
 
-
-        // cardEffect(feast, testCards[eachCard], 0, 0, &G, 0, &maxBonus);
+        cardEffect(feast, testCards[eachCard], 0, 0, &G, 0, &maxBonus);
 
         if (currentCoins != G.coins) {
             printf("The number of coins for the player is incorrect!\n");
