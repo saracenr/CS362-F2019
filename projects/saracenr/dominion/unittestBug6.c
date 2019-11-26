@@ -15,7 +15,7 @@ int main() {
     int r, handCount;
     int k[10] = {adventurer, council_room, feast, feast, mine
                , remodel, smithy, village, baron, great_hall};
-    int testCards[3] = {great_hall, council_room, gold}
+    int testCards[3] = {great_hall, council_room, gold};
     struct gameState G;
 
 
@@ -25,7 +25,7 @@ int main() {
         G.handCount[p] = 5; // set the number of cards on hand
         G.coins = 0;
         int currentCoins = G.coins;
-        G.hand[p][0] = feast
+        G.hand[p][0] = feast;
 
 
         cardEffect(feast, testCards[eachCard], 0, 0, &G, 0, maxBonus);
