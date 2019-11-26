@@ -42,7 +42,10 @@ int main() {
         int currentCoins = G.coins;
         G.hand[p][0] = feast;
 
+        printf("I made the feast!\n");
         cardEffect(feast, testCards[eachCard], 0, 0, &G, 0, &maxBonus);
+
+        printf("I played the feast card!\n");
 
         if (currentCoins != G.coins) {
             printf("The number of coins for the player is incorrect!\n");
