@@ -29,15 +29,15 @@ int main() {
         for (int addCards = 0; addCards < G.handCount[p]; addCards++) {
             G.hand[p][addCards] = estate;
         }
-
+        printf("I made the hand!\n");
         for (int addCards = 0; addCards < G.discardCount[p]; addCards++) {
             G.discard[p][addCards] = estate;
         }
-
+        printf("I made the discard!\n");
         for (int addCards = 0; addCards < G.deckCount[p]; addCards++) {
             G.deck[p][addCards] = estate;
         }
-
+        printf("I made the deck!\n");
         G.coins = 0;
         int currentCoins = G.coins;
         G.hand[p][0] = feast;
