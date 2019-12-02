@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
-
+#include "cardFunctions.h"
 
 int main() {
     int i;
