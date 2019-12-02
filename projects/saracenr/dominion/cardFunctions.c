@@ -246,6 +246,7 @@ int tributeCard(int choice1, int currentPlayer, int nextPlayer,  struct gameStat
             state->numActions = state->numActions + 2;
         }
     }
+    printf("Did I make it to the end of the tribute effect?\n");
     return 0;
 }
 
