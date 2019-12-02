@@ -1056,10 +1056,10 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
             }
             //  Looks like it is decrementing the deckCount 4 time when it should only be 2
             tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
-            state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+            state->deck[nextPlayer][state->deckCount[nextPlayer]] = -1;
             state->deckCount[nextPlayer]--; // Remove?
             tributeRevealedCards[1] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
-            state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+            state->deck[nextPlayer][state->deckCount[nextPlayer]] = -1;
             state->deckCount[nextPlayer]--; // Remove?
         }
 
