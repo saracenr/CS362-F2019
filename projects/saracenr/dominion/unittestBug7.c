@@ -95,6 +95,7 @@ int main() {
 
                 printf("I made it to calling the function!");
                 cardEffect(tribute, 0, 0, 0, &G, 0, &maxBonus);
+                printf("I made it to past the function!");
                 // printf("deckSize: %d, discardSize: %d, dups: %d.\n", deckSize, discardSize, duplicateReveal);
 
                 if (noCardsRevealed == 1) {
