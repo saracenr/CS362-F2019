@@ -590,8 +590,8 @@ int drawCard(int player, struct gameState *state)
         count = state->handCount[player];//Get current player's hand count
 
         if (DEBUG) { //Debug statements
-            printf("Current hand count: %d\n", count);
-            printf("Its printing this handcount!/n");
+            // printf("Current hand count: %d\n", count);
+            // printf("Its printing this handcount!/n");
         }
 
         deckCounter = state->deckCount[player];//Create a holder for the deck count
@@ -608,8 +608,8 @@ int drawCard(int player, struct gameState *state)
         int count = state->handCount[player];//Get current hand count for player
         int deckCounter;
         if (DEBUG) { //Debug statements
-            printf("Current hand count: %d\n", count);
-            printf("Its printing this handcount!/n");
+            // printf("Current hand count: %d\n", count);
+            // printf("Its printing this handcount!/n");
         }
 
         deckCounter = state->deckCount[player];//Create holder for the deck count
