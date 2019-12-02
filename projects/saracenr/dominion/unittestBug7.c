@@ -81,7 +81,7 @@ int main() {
                     }
                 }
                 else {
-                    if (G.deckCount[nextPlayer] <= 1) {
+                    if (G.deckCount[nextPlayer] == 0) {
                         for (i = 0; i < G.discardCount[nextPlayer]; i++) {
                             G.deck[nextPlayer][i] = G.discard[nextPlayer][i];//Move to deck
                             G.deckCount[nextPlayer]++;
@@ -96,7 +96,7 @@ int main() {
                 printf("I made it to calling the function!");
                 cardEffect(tribute, 0, 0, 0, &G, 0, &maxBonus);
                 // printf("deckSize: %d, discardSize: %d, dups: %d.\n", deckSize, discardSize, duplicateReveal);
-                
+
                 if (noCardsRevealed == 1) {
                     printf("Player had no deck or discard to reveal!\n");
                     if (currentCoins != G.coins) {
