@@ -93,6 +93,7 @@ int main() {
                     revealedCards[1] = G.deck[nextPlayer][G.deckCount[nextPlayer]-2];
                 }
 
+                printf("I made it to calling the function!");
                 cardEffect(tribute, 0, 0, 0, &G, 0, &maxBonus);
 
                 if (noCardsRevealed == 1) {
