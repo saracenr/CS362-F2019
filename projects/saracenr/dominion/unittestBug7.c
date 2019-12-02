@@ -24,10 +24,10 @@ int main() {
     for (int deckSize = 0; deckSize < 5; deckSize++)
     {
         //  Iterate using varying discard sizes from 0 to 4
-        for (discardSize = 0; discardSize < 5; discardSize++)
+        for (int discardSize = 0; discardSize < 5; discardSize++)
         {
             //  Creating a case when we will reveal two of the same card
-            for (duplicateReveal = 0; duplicateReveal < 2; duplicateReveal++)
+            for (int duplicateReveal = 0; duplicateReveal < 2; duplicateReveal++)
             {
                 memset(&G, 23, sizeof(struct gameState));   // clear the game state
                 r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
@@ -66,7 +66,7 @@ int main() {
                 int currentCoins = G.coins;
                 int currentActions = 1;
                 int currentHand = handCount;
-                int revealedCards[2] = {-1, -1}
+                int revealedCards[2] = {-1, -1};
                 int noCardsRevealed = 0;
 
                 if ((G.discardCount[nextPlayer] + G.deckCount[nextPlayer]) <= 1) {
@@ -89,8 +89,8 @@ int main() {
                             G.discardCount[nextPlayer]--;
                         }
                     }
-                    revealedCards[0] = G.deck[nextPlayer][state->deckCount[nextPlayer]-1];
-                    revealedCards[1] = G.deck[nextPlayer][state->deckCount[nextPlayer]-2];
+                    revealedCards[0] = G.deck[nextPlayer][G.deckCount[nextPlayer]-1];
+                    revealedCards[1] = G.deck[nextPlayer][G.deckCount[nextPlayer]-2];
                 }
 
                 cardEffect(tribute, 0, 0, 0, &G, 0, &maxBonus);
