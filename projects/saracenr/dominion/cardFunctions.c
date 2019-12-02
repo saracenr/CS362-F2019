@@ -205,7 +205,6 @@ int tributeCard(int choice1, int currentPlayer, int nextPlayer,  struct gameStat
             //No Card to Reveal
             if (DEBUG) {
                 printf("No cards to reveal\n");
-                return -1;
             }
         }
     }
@@ -219,6 +218,7 @@ int tributeCard(int choice1, int currentPlayer, int nextPlayer,  struct gameStat
                 state->discardCount[nextPlayer]--;
             }
         }
+        printf("Did I make it to revealing tribute cards?\n");
         tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
         state->deck[nextPlayer][state->deckCount[nextPlayer]] = -1;
         state->deckCount[nextPlayer]--;
@@ -233,6 +233,7 @@ int tributeCard(int choice1, int currentPlayer, int nextPlayer,  struct gameStat
         tributeRevealedCards[1] = -1;
     }
 
+    printf("Did I make it to looping over tribute cards?\n");
     for (int i = 0; i < 2; i++) {
         if (isTreasure(tributeRevealedCards[i])) { //Treasure cards
             state->coins += 2;
