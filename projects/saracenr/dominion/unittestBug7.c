@@ -96,7 +96,7 @@ int main() {
                 cardEffect(tribute, 0, 0, 0, &G, 0, &maxBonus);
 
                 if (noCardsRevealed == 1) {
-                    print("Player had no deck or discard to reveal!");
+                    printf("Player had no deck or discard to reveal!");
                     if (currentCoins != G.coins) {
                         printf("No cards revealed but coins were changed.");
                     }
