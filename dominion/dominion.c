@@ -1054,12 +1054,13 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
                 shuffle(nextPlayer,state);//Shuffle the deck
             }
+            //  Looks like it is decrementing the deckCount 4 time when it should only be 2
             tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
             state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
-            state->deckCount[nextPlayer]--;
+            state->deckCount[nextPlayer]--; // Remove?
             tributeRevealedCards[1] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
             state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
-            state->deckCount[nextPlayer]--;
+            state->deckCount[nextPlayer]--; // Remove?
         }
 
         if (tributeRevealedCards[0] == tributeRevealedCards[1]) { //If we have a duplicate card, just drop one
@@ -1069,6 +1070,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
         }
 
         for (i = 0; i <= 2; i ++) {
+            //  Need an if statement that if the value is -1 we dont do anything
             if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold) { //Treasure cards
                 state->coins += 2;
             }

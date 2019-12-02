@@ -37,6 +37,12 @@ unittestBug5: unittestBug5.c dominion.o rngs.o cardFunctions.o
 unittestBug6: unittestBug6.c dominion.o rngs.o cardFunctions.o
 	gcc -o unittestBug6 -g  unittestBug6.c dominion.o rngs.o cardFunctions.o $(CFLAGS)
 
+unittestBug7: unittestBug7.c dominion.o rngs.o cardFunctions.o
+	gcc -o unittestBug7 -g  unittestBug7.c dominion.o rngs.o cardFunctions.o $(CFLAGS)
+
+unittestBug8: unittestBug8.c dominion.o rngs.o cardFunctions.o
+	gcc -o unittestBug8 -g  unittestBug8.c dominion.o rngs.o cardFunctions.o $(CFLAGS)
+
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
