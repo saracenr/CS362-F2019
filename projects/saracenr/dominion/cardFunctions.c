@@ -206,6 +206,7 @@ int tributeCard(int choice1, int currentPlayer, int nextPlayer,  struct gameStat
             if (DEBUG) {
                 printf("No cards to reveal\n");
             }
+            return 0;
         }
     }
 
@@ -232,7 +233,7 @@ int tributeCard(int choice1, int currentPlayer, int nextPlayer,  struct gameStat
         tributeRevealedCards[1] = -1;
     }
 
-    for (int i = 0; i <= 2; i++) {
+    for (int i = 0; i < 2; i++) {
         if (isTreasure(tributeRevealedCards[i])) { //Treasure cards
             state->coins += 2;
         }
