@@ -205,6 +205,7 @@ int tributeCard(int choice1, int currentPlayer, int nextPlayer,  struct gameStat
             //No Card to Reveal
             if (DEBUG) {
                 printf("No cards to reveal\n");
+                return -1;
             }
         }
     }
