@@ -1073,6 +1073,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
                 // shuffle(nextPlayer,state);//Shuffle the deck REMOVED FOR TESTING
             }
+            printf("I made it to revealing cards for tribute.\n");
             tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
             state->deck[nextPlayer][state->deckCount[nextPlayer]] = -1;
             state->deckCount[nextPlayer]--;
@@ -1087,6 +1088,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
             tributeRevealedCards[1] = -1;
         }
 
+        printf("I made it to giving out benefits for the revealed cards.\n");
         for (i = 0; i < 2; i ++) {
             if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold) { //Treasure cards
                 state->coins += 2;
