@@ -219,14 +219,14 @@ int tributeCard(int choice1, int currentPlayer, int nextPlayer,  struct gameStat
             }
         }
         tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
-        state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+        state->deck[nextPlayer][state->deckCount[nextPlayer]] = -1;
         state->deckCount[nextPlayer]--;
         tributeRevealedCards[1] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
-        state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+        state->deck[nextPlayer][state->deckCount[nextPlayer]] = -1;
         state->deckCount[nextPlayer]--;
     }
 
-    if (tributeRevealedCards[0] != tributeRevealedCards[1]) { //If we have a duplicate card, just drop one
+    if (tributeRevealedCards[0] == tributeRevealedCards[1]) { //If we have a duplicate card, just drop one
         state->playedCards[state->playedCardCount] = tributeRevealedCards[1];
         state->playedCardCount++;
         tributeRevealedCards[1] = -1;
