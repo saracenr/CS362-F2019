@@ -24,7 +24,7 @@ int main() {
     for (int deckSize = 0; deckSize < 5; deckSize++)
     {
         //  Iterate using varying discard sizes from 0 to 4
-        for (int discardSize = 0; discardSize < 5; discardSize++)
+        for (int discardSize = 2; discardSize < 5; discardSize++)
         {
             //  Creating a case when we will reveal two of the same card
             for (int duplicateReveal = 0; duplicateReveal < 2; duplicateReveal++)
@@ -81,7 +81,7 @@ int main() {
                     }
                 }
                 else {
-                    if (G.deckCount[nextPlayer] == 0) {
+                    if (G.deckCount[nextPlayer] <= 1) {
                         for (i = 0; i < G.discardCount[nextPlayer]; i++) {
                             G.deck[nextPlayer][i] = G.discard[nextPlayer][i];//Move to deck
                             G.deckCount[nextPlayer]++;
@@ -97,15 +97,15 @@ int main() {
                 cardEffect(tribute, 0, 0, 0, &G, 0, &maxBonus);
 
                 if (noCardsRevealed == 1) {
-                    printf("Player had no deck or discard to reveal!");
+                    printf("Player had no deck or discard to reveal!\n");
                     if (currentCoins != G.coins) {
-                        printf("No cards revealed but coins were changed.");
+                        printf("No cards revealed but coins were changed.\n");
                     }
                     if (G.numActions != 0) {
-                        printf("Actions were incorrectly changed but no cards were revealed.");
+                        printf("Actions were incorrectly changed but no cards were revealed.\n");
                     }
                     if (currentHand - 1 != G.handCount[p]) {
-                        printf("Player hand size is wrong but not cards were revealed.");
+                        printf("Player hand size is wrong but not cards were revealed.\n");
                     }
                 }
                 else {
