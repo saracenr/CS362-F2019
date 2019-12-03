@@ -1078,10 +1078,10 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
             }
             printf("I made it to revealing cards for tribute.\n");
             tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
-            state->deck[nextPlayer][state->deckCount[nextPlayer]] = -1;
+            state->deck[nextPlayer][state->deckCount[nextPlayer]-1] = -1;
             state->deckCount[nextPlayer]--;
             tributeRevealedCards[1] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
-            state->deck[nextPlayer][state->deckCount[nextPlayer]] = -1;
+            state->deck[nextPlayer][state->deckCount[nextPlayer]-1] = -1;
             state->deckCount[nextPlayer]--;
         }
         printf("I made it past getting the revealed cards\n");
