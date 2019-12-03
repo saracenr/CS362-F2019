@@ -21,7 +21,10 @@ int main() {
     r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
     G.whoseTurn = p;
     G.handCount[p] = 5; // set the number of cards on hand
-
+    // Add cards to hand
+    for (int addCards = 0; addCards < G.deckCount[p]; addCards++) {
+        G.deck[p][addCards] = estate;
+    }
     G.coins = 0;
     int currentCoins = G.coins;
     G.hand[p][0] = minion;
