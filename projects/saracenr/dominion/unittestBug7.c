@@ -33,7 +33,8 @@ int main() {
                 r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
                 G.handCount[p] = handCount; // set the number of cards on hand
                 G.discardCount[nextPlayer] = discardSize;
-                G.deckCount[nextPlayer] = deckSize;    
+                G.deckCount[nextPlayer] = deckSize;  
+                G.deckCount[p] = 5;
                 G.whoseTurn = p;
                 // Add estate cards to hand
                 for (int addCards = 0; addCards < G.handCount[p]; addCards++) {
@@ -60,6 +61,10 @@ int main() {
                     else {
                         G.deck[nextPlayer][addCards] = testCards[addCards % 3];
                     }
+                }
+                //  Fill the current players deck.
+                for (int addCards = 0; addCards < G.deckCount[p]; addCards++) {
+                    G.hand[p][addCards] = estate;
                 }
 
                 // Initialize variables to track the current players resources to check them using asserts.
