@@ -98,9 +98,9 @@ int main() {
                     revealedCards[1] = G.deck[nextPlayer][G.deckCount[nextPlayer]-2];
                 }
 
-                printf("deckSize: %d, discardSize: %d, dups: %d.\n", deckSize, discardSize, duplicateReveal);
+                // printf("deckSize: %d, discardSize: %d, dups: %d.\n", deckSize, discardSize, duplicateReveal);
                 cardEffect(tribute, 0, 0, 0, &G, 0, &maxBonus);
-                printf("I made it to past the function!\n");
+                // printf("I made it to past the function!\n");
 
                 if (noCardsRevealed == 1) {
                     printf("Player had no deck or discard to reveal!\n");
