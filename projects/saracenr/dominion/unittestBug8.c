@@ -26,7 +26,7 @@ int main() {
     int currentCoins = G.coins;
     G.hand[p][0] = minion;
 
-    cardEffect(minion, 1, 0, 0, &G, 0, &maxBonus);
+    playCard(minion, 1, 0, 0, &G);
 
     if (currentCoins + 2  != G.coins) {
         printf("The number of coins for the player is incorrect!\n");
