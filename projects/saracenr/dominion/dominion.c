@@ -1086,9 +1086,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
         }
         printf("I made it past getting the revealed cards\n");
         if (tributeRevealedCards[0] == tributeRevealedCards[1]) { //If we have a duplicate card, just drop one
+            printf("Played cards world 1!\n");
             state->playedCards[state->playedCardCount] = tributeRevealedCards[1];
             state->playedCardCount++;
             tributeRevealedCards[1] = -1;
+            printf("Played cards world 2!\n");
         }
 
         printf("I made it to giving out benefits for the revealed cards.\n");
