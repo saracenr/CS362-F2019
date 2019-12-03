@@ -21,7 +21,6 @@ int main() {
     r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
     G.whoseTurn = p;
     G.handCount[p] = 5; // set the number of cards on hand
-    // Add cards to hand
     for (int addCards = 0; addCards < G.deckCount[p]; addCards++) {
         G.deck[p][addCards] = estate;
     }
@@ -29,7 +28,7 @@ int main() {
     int currentCoins = G.coins;
     G.hand[p][0] = minion;
 
-    playCard(minion, 1, 0, 0, &G);
+    cardEffect(minion, 1, 0, 0, &G,0, &maxBonus);
 
     if (currentCoins + 2  != G.coins) {
         printf("The number of coins for the player is incorrect!\n");
