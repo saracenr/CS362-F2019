@@ -1066,7 +1066,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
         else {
             if (state->deckCount[nextPlayer] == 0) {
-                for (i = 0; i < state->discardCount[nextPlayer]; i++) {
+                int loopCounter = state->discardCount[nextPlayer];
+                for (i = 0; i < loopCounter; i++) {
                     state->deck[nextPlayer][i] = state->discard[nextPlayer][i];//Move to deck
                     state->deckCount[nextPlayer]++;
                     state->discard[nextPlayer][i] = -1;
