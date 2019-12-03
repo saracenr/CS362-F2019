@@ -64,7 +64,7 @@ int main() {
                 }
                 //  Fill the current players deck.
                 for (int addCards = 0; addCards < G.deckCount[p]; addCards++) {
-                    G.hand[p][addCards] = estate;
+                    G.deck[p][addCards] = estate;
                 }
 
                 // Initialize variables to track the current players resources to check them using asserts.
