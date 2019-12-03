@@ -33,7 +33,7 @@ int main() {
             printf("The number of coins for the player is incorrect!\n");
         }
 
-        if (&maxBonus != 2) {
+        if (maxBonus != 2) {
             printf("Bonus was not correctly updated!.\n");
         }
     }
