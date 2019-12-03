@@ -1083,7 +1083,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
             state->deck[nextPlayer][state->deckCount[nextPlayer]] = -1;
             state->deckCount[nextPlayer]--;
         }
-
+        printf("I made it past getting the revealed cards\n");
         if (tributeRevealedCards[0] == tributeRevealedCards[1]) { //If we have a duplicate card, just drop one
             state->playedCards[state->playedCardCount] = tributeRevealedCards[1];
             state->playedCardCount++;
