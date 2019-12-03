@@ -34,7 +34,7 @@ int main() {
                 G.handCount[p] = handCount; // set the number of cards on hand
                 G.discardCount[nextPlayer] = discardSize;
                 G.deckCount[nextPlayer] = deckSize;  
-                G.deckCount[p] = 5;
+                G.deckCount[p] = 10;
                 G.whoseTurn = p;
                 // Add estate cards to hand
                 for (int addCards = 0; addCards < G.handCount[p]; addCards++) {
