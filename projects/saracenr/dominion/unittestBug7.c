@@ -131,27 +131,27 @@ int main() {
 
                     if (revealedCards[0] != revealedCards[1]) {  // Assert that if both cards are not the same type that are revealed then the correct action is taken
                         if (revealedCards[0] == great_hall && G.handCount[p] != handCount + 1) {
-                            printf("Handsize is incorrect for reveal of two victory cards!\n");
+                            printf("Handsize is incorrect for reveal of a victory card!\n");
                         }
 
                         if (revealedCards[0] == gold && G.coins != currentCoins + 2) {
-                            printf("Coins is incorrect for reveal of two treasure cards!\n");
+                            printf("Coins is incorrect for reveal of a treasure card!\n");
                         }
 
                         if (revealedCards[0] == council_room && G.numActions != 2) {
-                            printf("Actions is incorrect for reveal of two treasure cards!\n");
+                            printf("Actions is incorrect for reveal of a treasure card!\n");
                         }
 
                         if (revealedCards[1] == great_hall && G.handCount[p] != handCount + 1) {
-                            printf("Handsize is incorrect for reveal of two victory cards!\n");
+                            printf("Handsize is incorrect for reveal of a victory card!\n");
                         }
 
                         if (revealedCards[1] == gold && G.coins != currentCoins + 2) {
-                            printf("Coins is incorrect for reveal of two treasure cards!\n");
+                            printf("Coins is incorrect for reveal of a treasure card!\n");
                         }
 
                         if (revealedCards[1] == council_room && G.numActions != 2) {
-                            printf("Actions is incorrect for reveal of two treasure cards!\n");
+                            printf("Actions is incorrect for reveal of a treasure card!\n");
                         }
                     }
 
