@@ -1102,8 +1102,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
             }
 
             else if (tributeRevealedCards[i] == estate || tributeRevealedCards[i] == duchy || tributeRevealedCards[i] == province || tributeRevealedCards[i] == gardens || tributeRevealedCards[i] == great_hall) { //Victory Card Found
-                drawCard(currentPlayer, state);
-                drawCard(currentPlayer, state);
+                // drawCard(currentPlayer, state);
+                // drawCard(currentPlayer, state);
             }
             else { //Action Card
                 state->numActions = state->numActions + 2;
